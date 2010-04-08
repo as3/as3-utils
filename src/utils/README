@@ -1,0 +1,3 @@
+"tools" should be standalone functions with little or no dependecies (outside of playerglobal.swc).
+Basically, the standard is that you should be able to copy/paste any of the functions from "tools" into your app and use it inline without trouble. I know some functions currently break this rule, but I intend to refactor later if possible.
+With the power of the community, I hope to get all of these completely optimized and unit-tested.
