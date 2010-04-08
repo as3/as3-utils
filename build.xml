@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<project 
+	name="as3-utils" 
+	basedir="."
+	default="package">
+	
+	<!--
+		as3-utils
+		
+		usage: 
+			$ ant -v clean package
+		
+		@author drewbourne
+	-->
+	
+	<!-- properties -->
+	<property environment="env" />
+	<property file="build.properties" />
+
+	<!-- paths: existing -->
+	<property name="src.loc" location="${basedir}/src" />
+	<property name="test.loc" location="${basedir}/test" />
+	<property name="lib.loc" location="${basedir}/libs" />
+	<property name="build.loc" location="${basedir}/build" />
+	<property name="build.pmd.loc" location="${build.loc}/pmd" />
+	<property name="build.flexunit.loc" location="${build.loc}/flexunit" />
+
+	<!-- paths: enerated -->
+	<property name="dist.loc" location="${basedir}/target" />
+	<property name="bin.loc" location="${dist.loc}/bin" />
+	<property name="doc.loc" location="${dist.loc}/doc" />
+	<property name="report.loc" location="${dist.loc}/report" />
+	<property name="report.flexunit.loc" location="${report.loc}/flexunit" />
+
+	<!-- Flex SDK -->
+	<property name="FLEX_HOME" location="${env.FLEX_HOME}" />
+
+	<!-- taskdefs -->
+	<taskdef resource="flexTasks.tasks" 
+		classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+	
+	<!-- targets -->
+	<target
+		name="clean"
+		description="Removes generated artifacts and directories">
+		
+		<delete dir="${dist.loc}" />
+		
+	</target>
+	
+	<target 
+		name="initialize"
+		description="Creates generated directories ">
+		
+		<mkdir dir="${dist.loc}" />
+		<mkdir dir="${bin.loc}" />
+		<mkdir dir="${doc.loc}" />
+		<mkdir dir="${report.loc}" />
+		<mkdir dir="${report.flexunit.loc}" />
+		
+	</target>
+	
+	<target 
+		name="compile-check-if-required"
+		description="Checks if a compile is required"
+		depends="initialize">
+		
+		<uptodate 
+			property="compile.not-required"
+			targetfile="${bin.loc}/${build.artifact}.swc">
+			<srcresources>
+				<fileset dir="${src.loc}">
+					<include name="**/*.as" />
+					<include name="**/*.mxml" />
+				</fileset>
+				<fileset dir="${lib.loc}">
+					<include name="**/*.swc" />
+				</fileset>
+			</srcresources>
+		</uptodate>
+		
+	</target>
+	
+	<target 
+		name="compile" 
+		description="Compiles the library"
+		depends="initialize, compile-check-if-required"
+		unless="compile.not-required">
+		
+		<compc output="${bin.loc}/${build.artifact}.swc">
+			<source-path path-element="${src.loc}" />
+			
+			<include-sources dir="${src.loc}">
+				<include name="**/*.as" />
+				<include name="**/*.mxml" />
+			</include-sources>
+			
+			<library-path dir="${lib.loc}" append="true">
+				<include name="*.swc" />
+			</library-path>
+			
+			<compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
+			<compiler.headless-server>true</compiler.headless-server>
+		</compc>
+		
+	</target>
+
+	<target name="test" 
+		description="Run the test suite" 
+		depends="initialize">
+		
+		<taskdef resource="flexUnitTasks.tasks" 
+			classpath="${build.flexunit.loc}/flexUnitTasks-${flexunit.version}.jar" />
+		
+		<!-- Compile Test -->
+		<mxmlc 
+			file="${test.loc}/${test.runner}.${test.runner.ext}" 
+			output="${bin.loc}/${test.runner}.swf">
+			
+			<library-path dir="${bin.loc}" append="true">
+				<include name="${build.artifact}.swc" />
+			</library-path>
+
+			<library-path dir="${lib.loc}" append="true">
+				<include name="*.swc" />
+			</library-path>
+
+			<compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
+			<compiler.headless-server>true</compiler.headless-server>
+		</mxmlc>
+
+		<!-- Execute Tests -->
+		<flexunit 
+			swf="${bin.loc}/${test.runner}.swf" 
+			toDir="${report.flexunit.loc}" 
+			headless="true"
+			haltonfailure="false" 
+			verbose="true" 
+			localTrusted="true" />
+		
+	</target>
+
+	<target name="report" 
+		description="Generates test reports from FlexUnit, FlexPMD, FlexCPD, FlexMetrics" 
+		depends="test">
+		
+		<!-- Generate readable report for FlexUnit -->
+		<junitreport todir="${report.flexunit.loc}">
+			<fileset dir="${report.flexunit.loc}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${report.flexunit.loc}/html" />
+		</junitreport>
+
+		<!-- FlexPMD config -->
+		<path id="flexpmd.base">
+			<pathelement location="${build.pmd.loc}/as3-parser-${flexpmd.version}.jar" />
+			<pathelement location="${build.pmd.loc}/as3-parser-api-${flexpmd.version}.jar" />
+			<pathelement location="${build.pmd.loc}/as3-plugin-utils-${flexpmd.version}.jar" />
+			<pathelement location="${build.pmd.loc}/flex-pmd-files-${flexpmd.version}.jar" />
+			<pathelement location="${build.pmd.loc}/pmd-4.2.5.jar" />
+		</path>
+
+		<taskdef name="pmd" classname="com.adobe.ac.pmd.ant.FlexPmdAntTask" classpath="${build.pmd.loc}/flex-pmd-ant-task-${flexpmd.version}.jar">
+			<classpath>
+				<path refid="flexpmd.base" />
+				<pathelement location="${build.pmd.loc}/commons-lang-2.4.jar" />
+				<pathelement location="${build.pmd.loc}/flex-pmd-core-${flexpmd.version}.jar" />
+				<pathelement location="${build.pmd.loc}/flex-pmd-ruleset-api-${flexpmd.version}.jar" />
+				<pathelement location="${build.pmd.loc}/flex-pmd-ruleset-${flexpmd.version}.jar" />
+				<pathelement location="${build.pmd.loc}/plexus-utils-1.0.2.jar" />
+			</classpath>
+		</taskdef>
+
+		<taskdef name="cpd" classname="com.adobe.ac.cpd.ant.FlexCpdAntTask" classpath="${build.pmd.loc}/flex-pmd-cpd-ant-task-${flexpmd.version}.jar">
+			<classpath>
+				<path refid="flexpmd.base" />
+				<pathelement location="${build.pmd.loc}/flex-pmd-cpd-${flexpmd.version}.jar" />
+			</classpath>
+		</taskdef>
+
+		<taskdef name="metrics" classname="com.adobe.ac.pmd.metrics.ant.FlexMetricsAntTask" classpath="${build.pmd.loc}/flex-pmd-metrics-ant-task-${flexpmd.version}.jar">
+			<classpath>
+				<path refid="flexpmd.base" />
+				<pathelement location="${build.pmd.loc}/commons-lang-2.4.jar" />
+				<pathelement location="${build.pmd.loc}/dom4j-1.6.1.jar" />
+				<pathelement location="${build.pmd.loc}/flex-pmd-metrics-${flexpmd.version}.jar" />
+				<pathelement location="${build.pmd.loc}/flex-pmd-ruleset-api-${flexpmd.version}.jar" />
+			</classpath>
+		</taskdef>
+
+		<!-- Executions -->
+		<pmd sourceDirectory="${src.loc}" outputDirectory="${report.loc}" />
+
+		<cpd minimumTokenCount="50" outputFile="${report.loc}/cpd.xml">
+			<fileset dir="${src.loc}">
+				<include name="**/*.as" />
+				<include name="**/*.mxml" />
+			</fileset>
+		</cpd>
+
+		<metrics sourcedirectory="${src.loc}" outputfile="${report.loc}/javancss.xml" />
+		
+	</target>
+	
+	<target name="doc"
+		description="Generate ASDoc for ${ant.project.name}"
+		depends="initialize">
+		
+		<!-- Generate asdocs -->
+		<java jar="${FLEX_HOME}/lib/asdoc.jar" fork="true" failonerror="true">
+			<arg line="+flexlib '${FLEX_HOME}/frameworks'" />
+			<arg line="-doc-sources '${src.loc}'" />
+			<arg line="-source-path+='${src.loc}'" />
+			<arg line="-output '${doc.loc}'" />
+			<arg line="-main-title '${project.name} API Documentation'" />
+			<arg line="-window-title '${project.name} API Documentation'" />
+		</java>
+		
+	</target>
+
+	<target name="package" 
+		description="Package ${ant.project.name} into a zip" 
+		depends="compile, test, report, doc">
+
+		<!-- Create distribution for binaries with docs -->
+		<zip destfile="${dist.loc}/${build.artifact}.zip">
+			<zipfileset dir="${bin.loc}">
+				<include name="${build.artifact}.swc" />
+			</zipfileset>
+			<zipfileset dir="${doc.loc}" prefix="doc" />
+		</zip>
+		
+	</target>
+	
+</project>
