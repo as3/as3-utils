@@ -7,6 +7,7 @@ ActionScript 3 Utilities and Object Extensions provided as reusable package-leve
 HEAPS, too much to list here right now. 
 
 Oh ok here's a taste, there are umpteen utils for 
+
 - array
 - color
 - conversions
@@ -32,6 +33,6 @@ Fork the [as3-utils project](http://github.com/as3/as3-utils) on GitHub, see the
 
 # Contributors
 
-John Lindquist [@johnlindquist](http://twitter.com/johnlindquist)
-Drew Bourne [@drewbourne](http://twitter.com/drewbourne)
-You.
+- John Lindquist [@johnlindquist](http://twitter.com/johnlindquist)
+- Drew Bourne [@drewbourne](http://twitter.com/drewbourne)
+- You.
