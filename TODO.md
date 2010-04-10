@@ -4,6 +4,7 @@
 - attribute all functions to proper authors
 - check utils for duplicates
 - clean package structure
+- clean parameter names to be descriptive
 - build out tests
 - optimize
 - documentation
