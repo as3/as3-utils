@@ -1,7 +1,7 @@
 package utils.display
 {
 	/**
-	 * @author Justin Windle (justin@soulwire.co.uk)
+	 * @author Justin Windle (justin(at)soulwire.co.uk)
 	 */
 	public class Alignment 
 	{

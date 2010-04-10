@@ -17,7 +17,7 @@ package utils.object
 		}
 		if (obj != null)
 		{
-			for (var o in obj)
+			for (var o:Object in obj)
 			{
 				into[o] = obj[o];
 			}

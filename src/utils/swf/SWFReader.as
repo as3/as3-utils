@@ -317,7 +317,9 @@ package utils.swf {
 			// read all the tags in the file
 			// up until the END tag
 			try {
-				while(readTag());
+				while(readTag()) {
+					// noop	
+				}
 			}catch (error:Error) {
 
 				// error in tag parsing. EOF would throw

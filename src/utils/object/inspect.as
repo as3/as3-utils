@@ -21,7 +21,7 @@ package utils.object
 			 str += prefix + accessor.@name + " : " + scan(obj[accessor.@name], depth - 1, prefix + "\t") + "\n";
 			 }*/
 
-			for (var s in obj)
+			for (var s:Object in obj)
 			{
 				str += prefix + s + " = " + scan(obj[s], depth - 1, prefix + "\t") + "\n";
 			}

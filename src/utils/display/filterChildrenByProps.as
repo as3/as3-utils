@@ -8,7 +8,7 @@ package utils.display
 		var filteredChildren:Array = [];
 		var child:DisplayObject;
 
-		for (var i:int = 0, l = container.numChildren; i < l; i++)
+		for (var i:int = 0, l:int = container.numChildren; i < l; i++)
 		{
 			child = container.getChildAt(i);
 			var isOK:Boolean = true;
