@@ -5,6 +5,7 @@
 - check utils for duplicates
 - clean package structure
 - clean parameter names to be descriptive
+- code formatting
 - build out tests
 - optimize
 - documentation
