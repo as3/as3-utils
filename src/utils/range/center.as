@@ -4,13 +4,19 @@ package utils.range
 	{
 		if ((a > b) && (a > c))
 		{
-			if (b > c)      return b;
-			else            return c;
-		} else if ((b > a) && (b > c))
+			if (b > c)
+				return b;
+			else
+				return c;
+		}
+		else if ((b > a) && (b > c))
 		{
-			if (a > c)      return a;
-			else            return c;
-		} else if (a > b)
+			if (a > c)
+				return a;
+			else
+				return c;
+		}
+		else if (a > b)
 		{
 			return a;
 		}

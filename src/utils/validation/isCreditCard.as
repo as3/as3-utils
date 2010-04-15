@@ -1,10 +1,10 @@
 package utils.validation
 {
 	/**
-	 Determines if credit card is valid using the Luhn formula.
+	   Determines if credit card is valid using the Luhn formula.
 
-	 @param cardNumber: The credit card number.
-	 @return Returns <code>true</code> if String is a valid credit card number; otherwise <code>false</code>.
+	   @param cardNumber: The credit card number.
+	   @return Returns <code>true</code> if String is a valid credit card number; otherwise <code>false</code>.
 	 */
 	public function isCreditCard(cardNumber:String):Boolean
 	{

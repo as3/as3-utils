@@ -8,7 +8,7 @@ package utils.align
 	 * @param items An array of items
 	 * @param optional spacing The spacing between items in pixels as either a number or array or blank
 	 */
-	public function horizontalAlign(items:Array, ...args):void
+	public function horizontalAlign(items:Array, ... args):void
 	{
 		if (args.length > 0)
 		{
@@ -17,6 +17,7 @@ package utils.align
 			if (args[0] is Number)
 				horizontalAlignSpaceNumber(items, args[0]);
 		}
-		else horizontalAlignNoSpace(items);
+		else
+			horizontalAlignNoSpace(items);
 	}
 }

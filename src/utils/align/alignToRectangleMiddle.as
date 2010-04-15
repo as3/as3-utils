@@ -4,11 +4,11 @@ package utils.align
 	import flash.geom.Rectangle;
 
 	/**
-	 Aligns a DisplayObject to the vertical middle of the bounding Rectangle.
+	   Aligns a DisplayObject to the vertical middle of the bounding Rectangle.
 
-	 @param displayObject: The DisplayObject to align.
-	 @param bounds: The area in which to align the DisplayObject.
-	 @param snapToPixel: Force the position to whole pixels <code>true</code>, or to let the DisplayObject be positioned on sub-pixels <code>false</code>.
+	   @param displayObject: The DisplayObject to align.
+	   @param bounds: The area in which to align the DisplayObject.
+	   @param snapToPixel: Force the position to whole pixels <code>true</code>, or to let the DisplayObject be positioned on sub-pixels <code>false</code>.
 	 */
 	public function alignToRectangleMiddle(displayObject:DisplayObject, bounds:Rectangle, snapToPixel:Boolean = true):void
 	{

@@ -1,16 +1,16 @@
 package utils.array
 {
 	/**
-	 Finds out how many instances of <code>item</code> Array contains.
+	   Finds out how many instances of <code>item</code> Array contains.
 
-	 @param inArray: Array to search for <code>item</code> in.
-	 @param item: Object to find.
-	 @return The amount of <code>item</code>'s found; if none were found returns <code>0</code>.
-	 @example
-	 <code>
-	 var numberArray:Array = new Array(1, 2, 3, 7, 7, 7, 4, 5);
-	 trace("numberArray contains " + ArrayUtil.contains(numberArray, 7) + " 7's.");
-	 </code>
+	   @param inArray: Array to search for <code>item</code> in.
+	   @param item: Object to find.
+	   @return The amount of <code>item</code>'s found; if none were found returns <code>0</code>.
+	   @example
+	   <code>
+	   var numberArray:Array = new Array(1, 2, 3, 7, 7, 7, 4, 5);
+	   trace("numberArray contains " + ArrayUtil.contains(numberArray, 7) + " 7's.");
+	   </code>
 	 */
 	public function contains(inArray:Array, item:*):uint
 	{

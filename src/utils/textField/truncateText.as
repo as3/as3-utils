@@ -123,7 +123,8 @@ package utils.textField
 				{
 					tmpField.htmlText = tmpField.text.substr(0, -1);
 				}
-			} else if (whiteSpaceWidth > tmpField.textWidth)
+			}
+			else if (whiteSpaceWidth > tmpField.textWidth)
 			{
 				while (tmpField.textWidth < whiteSpaceWidth)
 				{

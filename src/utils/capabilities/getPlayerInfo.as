@@ -8,7 +8,8 @@ package utils.capabilities
 	public function getPlayerInfo():String
 	{
 		var debugger:String = (Capabilities.isDebugger) ? ' / Debugger' : '';
-		var info:String = String("Flash Platform: " + Capabilities.version + " / " + Capabilities.playerType + debugger + " / " + Capabilities.os + " / " + Capabilities.screenResolutionX + "x" + Capabilities.screenResolutionY);
+		var info:String =
+			String("Flash Platform: " + Capabilities.version + " / " + Capabilities.playerType + debugger + " / " + Capabilities.os + " / " + Capabilities.screenResolutionX + "x" + Capabilities.screenResolutionY);
 		return info;
 	}
 }

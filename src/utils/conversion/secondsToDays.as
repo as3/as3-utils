@@ -1,10 +1,10 @@
 package utils.conversion
 {
 	/**
-	 Converts seconds to days.
+	   Converts seconds to days.
 
-	 @param seconds: The number of seconds.
-	 @return Returns the number of days.
+	   @param seconds: The number of seconds.
+	   @return Returns the number of days.
 	 */
 	public function secondsToDays(seconds:Number):Number
 	{

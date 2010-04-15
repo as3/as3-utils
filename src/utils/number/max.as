@@ -1,17 +1,17 @@
 package utils.number
 {
 	/**
-	 Evaluates <code>val1</code> and <code>val2</code> and returns the larger value. Unlike <code>Math.max</code> this method will return the defined value if the other value is <code>null</code> or not a number.
+	   Evaluates <code>val1</code> and <code>val2</code> and returns the larger value. Unlike <code>Math.max</code> this method will return the defined value if the other value is <code>null</code> or not a number.
 
-	 @param val1: A value to compare.
-	 @param val2: A value to compare.
-	 @return Returns the largest value, or the value out of the two that is defined and valid.
-	 @example
-	 <code>
-	 trace(NumberUtil.max(-5, null)); // Traces -5
-	 trace(NumberUtil.max(-5, "CASA")); // Traces -5
-	 trace(NumberUtil.max(-5, -13)); // Traces -5
-	 </code>
+	   @param val1: A value to compare.
+	   @param val2: A value to compare.
+	   @return Returns the largest value, or the value out of the two that is defined and valid.
+	   @example
+	   <code>
+	   trace(NumberUtil.max(-5, null)); // Traces -5
+	   trace(NumberUtil.max(-5, "CASA")); // Traces -5
+	   trace(NumberUtil.max(-5, -13)); // Traces -5
+	   </code>
 	 */
 	public function max(val1:*, val2:*):Number
 	{

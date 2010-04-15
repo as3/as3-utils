@@ -1,10 +1,10 @@
 package utils.date
 {
 	/**
-	 Determines if or not the date is in daylight saving time.
+	   Determines if or not the date is in daylight saving time.
 
-	 @param d: Date to find if it is during daylight savings time.
-	 @return Returns <code>true</code> if daylight savings time; otherwise <code>false</code>.
+	   @param d: Date to find if it is during daylight savings time.
+	   @return Returns <code>true</code> if daylight savings time; otherwise <code>false</code>.
 	 */
 	public function isDaylightSavings(d:Date):Boolean
 	{

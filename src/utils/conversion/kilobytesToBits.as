@@ -1,10 +1,10 @@
 package utils.conversion
 {
 	/**
-	 Converts kilobytes to bits.
+	   Converts kilobytes to bits.
 
-	 @param kilobytes: The number of kilobytes.
-	 @return Returns the number of bits.
+	   @param kilobytes: The number of kilobytes.
+	   @return Returns the number of bits.
 	 */
 	public function kilobytesToBits(kilobytes:Number):Number
 	{

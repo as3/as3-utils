@@ -1,15 +1,15 @@
 package utils.number
 {
 	/**
-	 Determines if the number is prime.
+	   Determines if the number is prime.
 
-	 @param value: A number to determine if it is only divisible by <code>1</code> and itself.
-	 @return Returns <code>true</code> if the number is prime; otherwise <code>false</code>.
-	 @example
-	 <code>
-	 trace(NumberUtil.isPrime(13)); // Traces true
-	 trace(NumberUtil.isPrime(4)); // Traces false
-	 </code>
+	   @param value: A number to determine if it is only divisible by <code>1</code> and itself.
+	   @return Returns <code>true</code> if the number is prime; otherwise <code>false</code>.
+	   @example
+	   <code>
+	   trace(NumberUtil.isPrime(13)); // Traces true
+	   trace(NumberUtil.isPrime(4)); // Traces false
+	   </code>
 	 */
 	public function isPrime(value:Number):Boolean
 	{

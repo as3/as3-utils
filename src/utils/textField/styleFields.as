@@ -19,7 +19,8 @@ package utils.textField
 		{
 			var tf:TextField = o as TextField;
 			tf.styleSheet = css;
-		} else if (o is DisplayObject)
+		}
+		else if (o is DisplayObject)
 		{
 			for (var i:String in o)
 			{

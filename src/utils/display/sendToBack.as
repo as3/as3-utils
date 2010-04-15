@@ -12,7 +12,8 @@ package utils.display
 	 */
 	public function sendToBack(object:DisplayObject, forward:uint = 0):int
 	{
-		if (!object.parent) return -1;
+		if (!object.parent)
+			return -1;
 
 		var index:int = confine(forward, 0, object.parent.numChildren - 1);
 

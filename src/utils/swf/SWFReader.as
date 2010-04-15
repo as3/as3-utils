@@ -1,4 +1,5 @@
-package utils.swf {
+package utils.swf
+{
 
 	import flash.display.ActionScriptVersion;
 	import flash.geom.*;
@@ -11,7 +12,8 @@ package utils.swf {
 	 * this information is inaccessible to ActionScript
 	 * otherwise.
 	 */
-	public class SWFReader {
+	public class SWFReader
+	{
 
 		// properties starting with those
 		// found first in the byte stream
@@ -38,8 +40,12 @@ package utils.swf {
 		 * The dimensions of the SWF in the form of
 		 * a Rectangle instance.
 		 */
-		public function get dimensions():Rectangle { return _dimensions; }
+		public function get dimensions():Rectangle
+		{
+			return _dimensions;
+		}
 		private var _dimensions:Rectangle = new Rectangle();
+
 		// dimensions gets accessor since we don't
 		// want people nulling the rect; it should
 		// always have a value, even if 0-ed
@@ -48,7 +54,8 @@ package utils.swf {
 		 * Width of the stage as defined by the SWF.
 		 * Same as dimensions.width.
 		 */
-		public function get width():uint {
+		public function get width():uint
+		{
 			return uint(_dimensions.width);
 		}
 
@@ -56,7 +63,8 @@ package utils.swf {
 		 * Height of the stage as defined by the SWF.
 		 * Same as dimensions.height.
 		 */
-		public function get height():uint {
+		public function get height():uint
+		{
 			return uint(_dimensions.height);
 		}
 
@@ -66,10 +74,13 @@ package utils.swf {
 		 * the tag and the size of the tag. By default (false) this
 		 * information is not included.
 		 */
-		public function get tagCallbackBytesIncludesHeader():Boolean {
+		public function get tagCallbackBytesIncludesHeader():Boolean
+		{
 			return _tagCallbackBytesIncludesHeader;
 		}
-		public function set tagCallbackBytesIncludesHeader(value:Boolean):void {
+
+		public function set tagCallbackBytesIncludesHeader(value:Boolean):void
+		{
 			_tagCallbackBytesIncludesHeader = value;
 		}
 		private var _tagCallbackBytesIncludesHeader:Boolean = false;
@@ -172,29 +183,29 @@ package utils.swf {
 		private var bgColorFound:Boolean;
 
 		// constants
-		private const GET_DATA_SIZE:int			= 5;
-		private const TWIPS_TO_PIXELS:Number	= 0.05; // 20 twips in a pixel
-		private const TAG_HEADER_ID_BITS:int	= 6;
-		private const TAG_HEADER_MAX_SHORT:int	= 0x3F;
+		private const GET_DATA_SIZE:int = 5;
+		private const TWIPS_TO_PIXELS:Number = 0.05; // 20 twips in a pixel
+		private const TAG_HEADER_ID_BITS:int = 6;
+		private const TAG_HEADER_MAX_SHORT:int = 0x3F;
 
-		private const SWF_C:uint				= 0x43; // header characters
-		private const SWF_F:uint				= 0x46;
-		private const SWF_W:uint				= 0x57;
-		private const SWF_S:uint				= 0x53;
+		private const SWF_C:uint = 0x43; // header characters
+		private const SWF_F:uint = 0x46;
+		private const SWF_W:uint = 0x57;
+		private const SWF_S:uint = 0x53;
 
-		private const TAG_ID_EOF:uint			= 0; // recognized SWF tags
-		private const TAG_ID_BG_COLOR:uint		= 9;
-		private const TAG_ID_PROTECTED:uint		= 24;
-		private const TAG_ID_DEBUGGER1:uint		= 58;
-		private const TAG_ID_DEBUGGER2:uint		= 64;
-		private const TAG_ID_SCRIPT_LIMITS:uint	= 65;
-		private const TAG_ID_FILE_ATTS:uint		= 69;
-		private const TAG_ID_META:uint			= 77;
+		private const TAG_ID_EOF:uint = 0; // recognized SWF tags
+		private const TAG_ID_BG_COLOR:uint = 9;
+		private const TAG_ID_PROTECTED:uint = 24;
+		private const TAG_ID_DEBUGGER1:uint = 58;
+		private const TAG_ID_DEBUGGER2:uint = 64;
+		private const TAG_ID_SCRIPT_LIMITS:uint = 65;
+		private const TAG_ID_FILE_ATTS:uint = 69;
+		private const TAG_ID_META:uint = 77;
 
-		private const TAG_ID_SHAPE_1:uint		= 2;
-		private const TAG_ID_SHAPE_2:uint		= 22;
-		private const TAG_ID_SHAPE_3:uint		= 32;
-		private const TAG_ID_SHAPE_4:uint		= 83;
+		private const TAG_ID_SHAPE_1:uint = 2;
+		private const TAG_ID_SHAPE_2:uint = 22;
+		private const TAG_ID_SHAPE_3:uint = 32;
+		private const TAG_ID_SHAPE_4:uint = 83;
 
 		/**
 		 * SWFHeader constructor.
@@ -203,7 +214,8 @@ package utils.swf {
 		 * a URLLoader or using Loader.bytes once a SWF has
 		 * been loaded into that Loader.
 		 */
-		public function SWFReader(swfBytes:ByteArray = null) {
+		public function SWFReader(swfBytes:ByteArray = null)
+		{
 			parse(swfBytes);
 		}
 
@@ -213,11 +225,13 @@ package utils.swf {
 		 * obtained from a parsed SWF
 		 * @return The String form of the instance
 		 */
-		public function toString():String {
-			if (parsed) {
-				var compression:String	= (compressed) ? "compressed" : "uncompressed";
-				var frames:String		= totalFrames > 1 ? "frames" : "frame";
-				return "[SWF" + version + " AS"+asVersion+".0: " + totalFrames + " "+frames+" @ " + frameRate + " fps "
+		public function toString():String
+		{
+			if (parsed)
+			{
+				var compression:String = (compressed) ? "compressed" : "uncompressed";
+				var frames:String = totalFrames > 1 ? "frames" : "frame";
+				return "[SWF" + version + " AS" + asVersion + ".0: " + totalFrames + " " + frames + " @ " + frameRate + " fps "
 					+ _dimensions.width + "x" + _dimensions.height + " " + compression + "]";
 			}
 
@@ -230,11 +244,13 @@ package utils.swf {
 		 * properties from its header.
 		 * @param	swfBytes Bytes of a SWF to parse.
 		 */
-		public function parse(swfBytes:ByteArray):void {
+		public function parse(swfBytes:ByteArray):void
+		{
 			parseDefaults();
 
 			// null bytes, exit
-			if (swfBytes == null) {
+			if (swfBytes == null)
+			{
 				parseError("Error: Cannot parse a null value.");
 				return;
 			}
@@ -248,62 +264,67 @@ package utils.swf {
 			// HEADER
 			// --------------------------------------
 
-			try {
+			try
+			{
 
 				// try to parse the bytes.  Failures
 				// results in cleared values for the data
-				bytes			= swfBytes;
-				bytes.endian	= Endian.LITTLE_ENDIAN;
-				bytes.position	= 0;
+				bytes = swfBytes;
+				bytes.endian = Endian.LITTLE_ENDIAN;
+				bytes.position = 0;
 
 				// get header characters
-				var swfFC:uint	= bytes.readUnsignedByte(); // F, or C if compressed
-				var swfW:uint 	= bytes.readUnsignedByte(); // W
-				var swfS:uint	= bytes.readUnsignedByte(); // S
+				var swfFC:uint = bytes.readUnsignedByte(); // F, or C if compressed
+				var swfW:uint = bytes.readUnsignedByte(); // W
+				var swfS:uint = bytes.readUnsignedByte(); // S
 
 				// validate header characters
 				if ((swfFC != SWF_F && swfFC != SWF_C)
-				||   swfW  != SWF_W || swfS  != SWF_S) {
+					|| swfW != SWF_W || swfS != SWF_S)
+				{
 					parseError("Error: Invalid SWF header.");
 					return;
 				}
 
-				compressed	= Boolean(swfFC == SWF_C); // == SWF_F if not compressed
+				compressed = Boolean(swfFC == SWF_C); // == SWF_F if not compressed
 
-				version		= bytes.readUnsignedByte();
+				version = bytes.readUnsignedByte();
 
-				fileSize	= bytes.readUnsignedInt(); // mostly redundant since we should have full bytes
+				fileSize = bytes.readUnsignedInt(); // mostly redundant since we should have full bytes
 
 				// if compressed, need to uncompress
 				// the data after the first 8 bytes
 				// (first 8 already read above)
-				if (compressed) {
+				if (compressed)
+				{
 
 					// use a temporary byte array to
 					// represent the compressed portion
 					// of the SWF file
 					var temp:ByteArray = new ByteArray();
 					bytes.readBytes(temp);
-					bytes			= temp;
-					bytes.endian	= Endian.LITTLE_ENDIAN;
-					bytes.position	= 0;
-					temp			= null; // temp no longer needed
+					bytes = temp;
+					bytes.endian = Endian.LITTLE_ENDIAN;
+					bytes.position = 0;
+					temp = null; // temp no longer needed
 
 					bytes.uncompress();
 
-					// Note: at this point, the original
-					// uncompressed 8 bytes are no longer
-					// part of the current bytes byte array
+						// Note: at this point, the original
+						// uncompressed 8 bytes are no longer
+						// part of the current bytes byte array
 				}
 
-				_dimensions	= readRect();
+				_dimensions = readRect();
 				bytes.position++; // one up after rect
 
-				frameRate	= bytes.readUnsignedByte();
+				frameRate = bytes.readUnsignedByte();
 
-				totalFrames	= bytes.readUnsignedShort();
+				totalFrames = bytes.readUnsignedShort();
 
-			}catch (error:Error) {
+			}
+			catch (error:Error)
+			{
 
 				// header parse error
 				parseError(error.message);
@@ -316,11 +337,15 @@ package utils.swf {
 
 			// read all the tags in the file
 			// up until the END tag
-			try {
-				while(readTag()) {
+			try
+			{
+				while (readTag())
+				{
 					// noop	
 				}
-			}catch (error:Error) {
+			}
+			catch (error:Error)
+			{
 
 				// error in tag parsing. EOF would throw
 				// an error, but the END tag should be
@@ -342,53 +367,55 @@ package utils.swf {
 		 * which is only required to be specified in
 		 * SWF8 and above (in FileAttributes tag).
 		 */
-		private function parseDefaults():void {
-			compressed		= false;
-			version			= 1; // SWF1
-			fileSize		= 0;
-			_dimensions		= new Rectangle();
-			frameRate		= 12; // default from Flash authoring (flex == 24)
-			totalFrames		= 1;
-			metadata		= null;
-			asVersion		= ActionScriptVersion.ACTIONSCRIPT2; // 2 if not explicit
-			usesNetwork		= false;
-			backgroundColor	= 0xFFFFFF; // white background
-			protectedFromImport	= false;
-			debuggerEnabled	= true;
-			scriptTimeoutLimit	= 256;
-			recursionLimit	= 15;
-			hardwareAcceleration	= 0;
+		private function parseDefaults():void
+		{
+			compressed = false;
+			version = 1; // SWF1
+			fileSize = 0;
+			_dimensions = new Rectangle();
+			frameRate = 12; // default from Flash authoring (flex == 24)
+			totalFrames = 1;
+			metadata = null;
+			asVersion = ActionScriptVersion.ACTIONSCRIPT2; // 2 if not explicit
+			usesNetwork = false;
+			backgroundColor = 0xFFFFFF; // white background
+			protectedFromImport = false;
+			debuggerEnabled = true;
+			scriptTimeoutLimit = 256;
+			recursionLimit = 15;
+			hardwareAcceleration = 0;
 
-			errorText		= ""; // clear existing error text
+			errorText = ""; // clear existing error text
 
 			// tag helper flags
-			bgColorFound	= false;
+			bgColorFound = false;
 		}
 
 		/**
 		 * Clears variable data and logs an error
 		 * message.
 		 */
-		private function parseError(message:String = "Unkown error."):void {
-			compressed		= false;
-			version			= 0;
-			fileSize		= 0;
-			_dimensions		= new Rectangle();
-			frameRate		= 0;
-			totalFrames		= 0;
-			metadata		= null;
-			asVersion		= 0;
-			usesNetwork		= false;
-			backgroundColor	= 0;
-			protectedFromImport	= false;
-			debuggerEnabled	= false;
-			scriptTimeoutLimit	= 0;
-			recursionLimit	= 0;
-			hardwareAcceleration	= 0;
+		private function parseError(message:String = "Unkown error."):void
+		{
+			compressed = false;
+			version = 0;
+			fileSize = 0;
+			_dimensions = new Rectangle();
+			frameRate = 0;
+			totalFrames = 0;
+			metadata = null;
+			asVersion = 0;
+			usesNetwork = false;
+			backgroundColor = 0;
+			protectedFromImport = false;
+			debuggerEnabled = false;
+			scriptTimeoutLimit = 0;
+			recursionLimit = 0;
+			hardwareAcceleration = 0;
 
-			parsed			= false;
-			bytes			= null;
-			errorText		= message;
+			parsed = false;
+			bytes = null;
+			errorText = message;
 		}
 
 		/**
@@ -396,9 +423,11 @@ package utils.swf {
 		 * in hex style padding value with "0" characters.
 		 * @return The string representation of the hex value.
 		 */
-		private function paddedHex(value:uint, numChars:int = 6):String {
+		private function paddedHex(value:uint, numChars:int = 6):String
+		{
 			var str:String = value.toString(16);
-			while (str.length < numChars) str = "0" + str;
+			while (str.length < numChars)
+				str = "0" + str;
 			return "0x" + str;
 		}
 
@@ -408,14 +437,19 @@ package utils.swf {
 		 * is reached.
 		 * @return The string having been read.
 		 */
-		private function readString():String {
+		private function readString():String
+		{
 
 			// find ending null character that
 			// terminates the string
 			var i:uint = bytes.position;
-			try {
-				while(bytes[i] != 0) i++;
-			}catch (error:Error) {
+			try
+			{
+				while (bytes[i] != 0)
+					i++;
+			}
+			catch (error:Error)
+			{
 				return "";
 			}
 
@@ -430,38 +464,42 @@ package utils.swf {
 		 * @return A rectangle object whose values
 		 * match those of the RECT read.
 		 */
-		private function readRect():Rectangle {
+		private function readRect():Rectangle
+		{
 			nextBitByte();
-			var rect:Rectangle	= new Rectangle();
-			var dataSize:uint	= readBits(GET_DATA_SIZE);
-			rect.left			= readBits(dataSize, true)*TWIPS_TO_PIXELS;
-			rect.right			= readBits(dataSize, true)*TWIPS_TO_PIXELS;
-			rect.top			= readBits(dataSize, true)*TWIPS_TO_PIXELS;
-			rect.bottom			= readBits(dataSize, true)*TWIPS_TO_PIXELS;
+			var rect:Rectangle = new Rectangle();
+			var dataSize:uint = readBits(GET_DATA_SIZE);
+			rect.left = readBits(dataSize, true) * TWIPS_TO_PIXELS;
+			rect.right = readBits(dataSize, true) * TWIPS_TO_PIXELS;
+			rect.top = readBits(dataSize, true) * TWIPS_TO_PIXELS;
+			rect.bottom = readBits(dataSize, true) * TWIPS_TO_PIXELS;
 			return rect;
 		}
 
-		private function readMatrix():Matrix {
+		private function readMatrix():Matrix
+		{
 			nextBitByte();
 			var dataSize:uint;
 			var matrix:Matrix = new Matrix();
 
-			if (readBits(1)){ // has scale
-				dataSize	= readBits(GET_DATA_SIZE);
-				matrix.a	= readBits(dataSize, true);
-				matrix.d	= readBits(dataSize, true);
+			if (readBits(1))
+			{ // has scale
+				dataSize = readBits(GET_DATA_SIZE);
+				matrix.a = readBits(dataSize, true);
+				matrix.d = readBits(dataSize, true);
 			}
 
-			if (readBits(1)){ // has rotation
-				dataSize	= readBits(GET_DATA_SIZE);
-				matrix.b	= readBits(dataSize, true);
-				matrix.c	= readBits(dataSize, true);
+			if (readBits(1))
+			{ // has rotation
+				dataSize = readBits(GET_DATA_SIZE);
+				matrix.b = readBits(dataSize, true);
+				matrix.c = readBits(dataSize, true);
 			}
 
 			// translation
-			dataSize	= readBits(GET_DATA_SIZE);
-			matrix.tx	= readBits(dataSize, true)*TWIPS_TO_PIXELS;
-			matrix.ty	= readBits(dataSize, true)*TWIPS_TO_PIXELS;
+			dataSize = readBits(GET_DATA_SIZE);
+			matrix.tx = readBits(dataSize, true) * TWIPS_TO_PIXELS;
+			matrix.ty = readBits(dataSize, true) * TWIPS_TO_PIXELS;
 
 			return matrix;
 		}
@@ -476,30 +514,37 @@ package utils.swf {
 		 * @param	numBits The number of bits to read.
 		 * @return The bits read as a uint.
 		 */
-		private function readBits(numBits:uint, signed:Boolean = false):Number {
-			var value:Number	= 0; // int or uint
-			var remaining:uint	= 8 - bitPosition;
+		private function readBits(numBits:uint, signed:Boolean = false):Number
+		{
+			var value:Number = 0; // int or uint
+			var remaining:uint = 8 - bitPosition;
 			var mask:uint;
 
 			// can get all bits from current byte
-			if (numBits <= remaining){
-				mask	= (1 << numBits) - 1;
-				value	= (currentByte >> (remaining - numBits)) & mask;
-				if (numBits == remaining) nextBitByte();
-				else bitPosition += numBits;
+			if (numBits <= remaining)
+			{
+				mask = (1 << numBits) - 1;
+				value = (currentByte >> (remaining - numBits)) & mask;
+				if (numBits == remaining)
+					nextBitByte();
+				else
+					bitPosition += numBits;
 
-			// have to get bits from 2 (or more)
-			// bytes the current and the next (recursive)
-			}else{
-				mask				= (1 << remaining) - 1;
-				var firstValue:uint	= currentByte & mask;
-				var over:uint		= numBits - remaining;
+					// have to get bits from 2 (or more)
+					// bytes the current and the next (recursive)
+			}
+			else
+			{
+				mask = (1 << remaining) - 1;
+				var firstValue:uint = currentByte & mask;
+				var over:uint = numBits - remaining;
 				nextBitByte();
 				value = (firstValue << over) | readBits(over);
 			}
 
 			// convert to signed int if signed bitflag exists
-			if (signed && value >> (numBits - 1) == 1){
+			if (signed && value >> (numBits - 1) == 1)
+			{
 				remaining = 32 - numBits; // 32-bit uint
 				mask = (1 << remaining) - 1;
 				return int(mask << numBits | value);
@@ -514,7 +559,8 @@ package utils.swf {
 		 * it to currentByte and resets the value of
 		 * bitPosition to 0.
 		 */
-		private function nextBitByte():void {
+		private function nextBitByte():void
+		{
 			currentByte = bytes.readByte();
 			bitPosition = 0;
 		}
@@ -524,7 +570,8 @@ package utils.swf {
 		 * @return false if the tag read is the END tag;
 		 * true if more tags should be present in the file.
 		 */
-		private function readTag():Boolean {
+		private function readTag():Boolean
+		{
 
 			var currentTagPosition:uint = bytes.position;
 
@@ -536,7 +583,8 @@ package utils.swf {
 			// if a long tag, the tag length will be
 			// set to its maximum. If so, set
 			// the tag length to the long length
-			if (tagLength == TAG_HEADER_MAX_SHORT) {
+			if (tagLength == TAG_HEADER_MAX_SHORT)
+			{
 				tagLength = bytes.readUnsignedInt();
 			}
 
@@ -549,7 +597,8 @@ package utils.swf {
 
 			// read the data in the tag (if supported)
 			var moreTags:Boolean = readTagData(tagLength, currentTagPosition, nextTagPosition);
-			if (!moreTags) return false; // end tag
+			if (!moreTags)
+				return false; // end tag
 
 			// next tag
 			bytes.position = nextTagPosition;
@@ -565,17 +614,23 @@ package utils.swf {
 		 * @return false if the tag read is the END tag;
 		 * true if more tags should be present in the file.
 		 */
-		private function readTagData(tagLength:uint, start:uint, end:uint):Boolean {
+		private function readTagData(tagLength:uint, start:uint, end:uint):Boolean
+		{
 
 			// if defined, call the tag callback with
 			// the tag id and a copy of the bytes
 			// specific to the tag
-			if (tagCallback != null) {
+			if (tagCallback != null)
+			{
 				var tagBytes:ByteArray = new ByteArray();
-				if (_tagCallbackBytesIncludesHeader){
+				if (_tagCallbackBytesIncludesHeader)
+				{
 					tagBytes.writeBytes(bytes, start, end - start);
-				}else{
-					if (tagLength){
+				}
+				else
+				{
+					if (tagLength)
+					{
 						tagBytes.writeBytes(bytes, bytes.position, tagLength);
 					}
 				}
@@ -585,7 +640,8 @@ package utils.swf {
 
 			// handle each tag individually based on
 			// it's tag id
-			switch (currentTag) {
+			switch (currentTag)
+			{
 
 
 				// FileAttributes tag was only required for
@@ -618,9 +674,12 @@ package utils.swf {
 				// just check for the metadata tag id
 				case TAG_ID_META:
 
-					try {
+					try
+					{
 						metadata = new XML(readString());
-					}catch (error:Error) {
+					}
+					catch (error:Error)
+					{
 						// error reading string or parsing as XML
 					}
 					break;
@@ -634,7 +693,8 @@ package utils.swf {
 					// check the bg color found flag
 					// if true, we want to ignore all other colors
 					// since they would be added after this one
-					if (!bgColorFound) {
+					if (!bgColorFound)
+					{
 						bgColorFound = true;
 
 						backgroundColor = readRGB();
@@ -656,20 +716,22 @@ package utils.swf {
 				// the debugger 2 tag is for SWF6+
 				case TAG_ID_DEBUGGER1:
 
-					if (version == 5) debuggerEnabled = true;
+					if (version == 5)
+						debuggerEnabled = true;
 					// password if needed
 					break;
 				case TAG_ID_DEBUGGER2:
 
-					if (version > 5) debuggerEnabled = true;
+					if (version > 5)
+						debuggerEnabled = true;
 					// password if needed
 					break;
 
 				// for both timeout and recursion but I don't
 				// think any tool lets you set recursion
 				case TAG_ID_SCRIPT_LIMITS:
-					recursionLimit		= bytes.readUnsignedShort();
-					scriptTimeoutLimit	= bytes.readUnsignedShort();
+					recursionLimit = bytes.readUnsignedShort();
+					scriptTimeoutLimit = bytes.readUnsignedShort();
 					break;
 
 				case TAG_ID_EOF:
@@ -687,26 +749,32 @@ package utils.swf {
 			// not last tag, continue reading
 			return true;
 		}
-		private function readRGB():uint {
+
+		private function readRGB():uint
+		{
 			return (bytes.readUnsignedByte() << 16) // R
-				 | (bytes.readUnsignedByte() << 8)  // G
-				 |  bytes.readUnsignedByte(); //       B
+				| (bytes.readUnsignedByte() << 8) // G
+				| bytes.readUnsignedByte(); //       B
 		}
-		private function readARGB():uint {
+
+		private function readARGB():uint
+		{
 			return (bytes.readUnsignedByte() << 24) // A
-				 | (bytes.readUnsignedByte() << 16) // R
-				 | (bytes.readUnsignedByte() << 8)  // G
-				 |  bytes.readUnsignedByte(); //       B
+				| (bytes.readUnsignedByte() << 16) // R
+				| (bytes.readUnsignedByte() << 8) // G
+				| bytes.readUnsignedByte(); //       B
 		}
-		private function readRGBA():uint {
+
+		private function readRGBA():uint
+		{
 			var rByte:uint = bytes.readUnsignedByte(); // R
 			var gByte:uint = bytes.readUnsignedByte(); // G
 			var bByte:uint = bytes.readUnsignedByte(); // B
 			var aByte:uint = bytes.readUnsignedByte(); // A
 			return (aByte << 24) // A
-				 | (rByte << 16) // R
-				 | (gByte << 8)  // G
-				 |  bByte; //       B
+				| (rByte << 16) // R
+				| (gByte << 8) // G
+				| bByte; //       B
 		}
 	}
 }

@@ -1,10 +1,10 @@
 package utils.conversion
 {
 	/**
-	 Converts hours to minutes.
+	   Converts hours to minutes.
 
-	 @param hours: The number of hours.
-	 @return Returns the number of minutes.
+	   @param hours: The number of hours.
+	   @return Returns the number of minutes.
 	 */
 	public function hoursToMinutes(hours:Number):Number
 	{

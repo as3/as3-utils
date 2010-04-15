@@ -1,17 +1,17 @@
 package utils.array
 {
 	/**
-	 Modifies original Array by removing all items that are identical to the specified item.
+	   Modifies original Array by removing all items that are identical to the specified item.
 
-	 @param tarArray: Array to remove passed <code>item</code>.
-	 @param item: Element to remove.
-	 @return The amount of removed elements that matched <code>item</code>, if none found returns <code>0</code>.
-	 @example
-	 <code>
-	 var numberArray:Array = new Array(1, 2, 3, 7, 7, 7, 4, 5);
-	 trace("Removed " + ArrayUtil.removeItem(numberArray, 7) + " items.");
-	 trace(numberArray);
-	 </code>
+	   @param tarArray: Array to remove passed <code>item</code>.
+	   @param item: Element to remove.
+	   @return The amount of removed elements that matched <code>item</code>, if none found returns <code>0</code>.
+	   @example
+	   <code>
+	   var numberArray:Array = new Array(1, 2, 3, 7, 7, 7, 4, 5);
+	   trace("Removed " + ArrayUtil.removeItem(numberArray, 7) + " items.");
+	   trace(numberArray);
+	   </code>
 	 */
 	public function removeItem(tarArray:Array, item:*):uint
 	{

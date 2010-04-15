@@ -34,7 +34,7 @@ package utils.display
 			if (Capabilities.version.split(" ")[1] == "9,0,16,0")
 			{
 				// Flash 9 bug where returned scale9Grid as twips
-				rect.x /= 20,rect.y /= 20,rect.width /= 20,rect.height /= 20;
+				rect.x /= 20, rect.y /= 20, rect.width /= 20, rect.height /= 20;
 			}
 
 			duplicate.scale9Grid = rect;

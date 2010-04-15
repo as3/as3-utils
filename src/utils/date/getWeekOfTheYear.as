@@ -3,10 +3,10 @@ package utils.date
 	import utils.conversion.millisecondsToDays;
 
 	/**
-	 Determines the week number of year, weeks start on Mondays.
+	   Determines the week number of year, weeks start on Mondays.
 
-	 @param d: Date object to find the current week number of.
-	 @return Returns the the week of the year the date falls in.
+	   @param d: Date object to find the current week number of.
+	   @return Returns the the week of the year the date falls in.
 	 */
 	public function getWeekOfTheYear(d:Date):uint
 	{

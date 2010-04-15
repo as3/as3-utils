@@ -16,7 +16,7 @@ package utils.string
 	 *       @tiptext
 	 */
 	public function stringsAreEqual(s1:String, s2:String,
-	                                caseSensitive:Boolean):Boolean
+		caseSensitive:Boolean):Boolean
 	{
 		if (caseSensitive)
 		{

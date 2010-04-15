@@ -1,10 +1,10 @@
 package utils.conversion
 {
 	/**
-	 Converts degrees to radians.
+	   Converts degrees to radians.
 
-	 @param degrees: The number of degrees.
-	 @return Returns the number of radians.
+	   @param degrees: The number of degrees.
+	   @return Returns the number of radians.
 	 */
 	public function degreesToRadians(degrees:Number):Number
 	{

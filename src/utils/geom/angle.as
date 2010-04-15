@@ -3,11 +3,11 @@ package utils.geom
 	import flash.geom.Point;
 
 	/**
-	 Determines the angle/degree between the first and second point.
+	   Determines the angle/degree between the first and second point.
 
-	 @param first: The first Point.
-	 @param second: The second Point.
-	 @return The degree between the two points.
+	   @param first: The first Point.
+	   @param second: The second Point.
+	   @return The degree between the two points.
 	 */
 	public function angle(first:Point, second:Point):Number
 	{

@@ -9,7 +9,7 @@ package utils.array
 	 *       @param arr2 The second array that will be compared to the first.
 	 *
 	 *       @return True if the arrays contains the same values at the same indexes.
-	 False if they do not.
+	   False if they do not.
 	 *
 	 *       @langversion ActionScript 3.0
 	 *       @playerversion Flash 9.0

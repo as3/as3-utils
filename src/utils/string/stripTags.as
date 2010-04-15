@@ -3,7 +3,7 @@ package utils.string
 	/**
 	 * Strip HTML markup tags.
 	 */
-	public  function stripTags(str:String):String
+	public function stripTags(str:String):String
 	{
 		var s:Array = new Array();
 		var c:Array = new Array();
@@ -12,7 +12,8 @@ package utils.string
 			if (str.charAt(i) == "<")
 			{
 				s.push(i);
-			} else if (str.charAt(i) == ">")
+			}
+			else if (str.charAt(i) == ">")
 			{
 				c.push(i);
 			}

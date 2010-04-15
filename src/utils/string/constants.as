@@ -1,5 +1,6 @@
 package utils.string
 {
+
 	public class constants
 	{
 		public static const REGEX_UNSAFE_CHARS:String = "\\-^[]";

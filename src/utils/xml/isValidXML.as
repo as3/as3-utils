@@ -19,7 +19,7 @@ package utils.xml
 		{
 			xml = new XML(data);
 		}
-		catch(e:Error)
+		catch (e:Error)
 		{
 			return false;
 		}

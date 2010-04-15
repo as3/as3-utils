@@ -1,10 +1,10 @@
 package utils.conversion
 {
 	/**
-	 Converts days to milliseconds.
+	   Converts days to milliseconds.
 
-	 @param days: The number of days.
-	 @return Returns the number of milliseconds.
+	   @param days: The number of days.
+	   @return Returns the number of milliseconds.
 	 */
 	public function daysToMilliseconds(days:Number):Number
 	{

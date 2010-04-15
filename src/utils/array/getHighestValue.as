@@ -1,15 +1,15 @@
 package utils.array
 {
 	/**
-	 Finds the highest value in <code>inArray</code>.
+	   Finds the highest value in <code>inArray</code>.
 
-	 @param inArray: Array composed only of numbers.
-	 @return The highest value in <code>inArray</code>.
-	 @example
-	 <code>
-	 var numberArray:Array = new Array(2, 1, 5, 4, 3);
-	 trace("The highest value is: " + ArrayUtil.getHighestValue(numberArray));
-	 </code>
+	   @param inArray: Array composed only of numbers.
+	   @return The highest value in <code>inArray</code>.
+	   @example
+	   <code>
+	   var numberArray:Array = new Array(2, 1, 5, 4, 3);
+	   trace("The highest value is: " + ArrayUtil.getHighestValue(numberArray));
+	   </code>
 	 */
 	public function getHighestValue(inArray:Array):Number
 	{

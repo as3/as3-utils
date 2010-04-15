@@ -7,7 +7,7 @@ package utils.object
 	 *           specified object is null, this is false.
 	 *   @author Jackson Dunstan
 	 */
-	public function hasProperties(obj:Object):Boolean
+	public function hasAnyProperties(obj:Object):Boolean
 	{
 		for each (var prop:Object in obj)
 		{

@@ -12,7 +12,8 @@ package utils.display
 	 */
 	public function sendBackward(object:DisplayObject, steps:uint = 1):int
 	{
-		if (!object.parent) return -1;
+		if (!object.parent)
+			return -1;
 
 		var index:int = object.parent.getChildIndex(object) - steps;
 		index = confine(index, 0, object.parent.numChildren - 1);

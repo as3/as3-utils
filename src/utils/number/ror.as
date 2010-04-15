@@ -10,6 +10,6 @@ package utils.number
 	public function ror(x:int, n:int):uint
 	{
 		var nn:int = 32 - n;
-		return ( x << nn ) | ( x >>> ( 32 - nn ) );
+		return (x << nn) | (x >>> (32 - nn));
 	}
 }

@@ -4,10 +4,10 @@ package utils.date
 	import utils.conversion.secondsToHours;
 
 	/**
-	 Converts current time into Swatch internet time or beats.
+	   Converts current time into Swatch internet time or beats.
 
-	 @param d: Date object to convert.
-	 @return Returns time in beats (0 to 999).
+	   @param d: Date object to convert.
+	   @return Returns time in beats (0 to 999).
 	 */
 	public function getInternetTime(d:Date):Number
 	{

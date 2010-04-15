@@ -1,14 +1,14 @@
 package utils.validation
 {
 	/**
-	 * Encode a credit card number as a string and encode all digits except the 
+	 * Encode a credit card number as a string and encode all digits except the
 	 * last <code>digitsShown</code>.
-	 * 
+	 *
 	 * @param strNumber     credit card number as string
 	 * @param digitsShown   display this many digits at the end of the card number for security purposes
 	 * @param encodeChar    optional encoding character to use instead of default '*'
-	 * 
-	 * @example 
+	 *
+	 * @example
 	 * <listing version="3.0">
 	 * trace(CreditCardValidator.EncodeNumber("1234567890123456")); // ************3456
 	 * trace(CreditCardValidator.EncodeNumber("1234567890123456", 5, "x"));  // xxxxxxxxxxx23456

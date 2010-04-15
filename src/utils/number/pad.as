@@ -26,7 +26,8 @@ package utils.number
 		var negative:Boolean = integer.substr(0, 1) == "-";
 
 		// remove the "-" if it exists
-		if (negative) integer = integer.substr(1);
+		if (negative)
+			integer = integer.substr(1);
 
 		// treat zeros as empty, so integer.length doesn't return 1 when integer is 0
 		if (integer == "0")
@@ -40,7 +41,8 @@ package utils.number
 		var zeros:int = Math.max(0, beforePoint - len);
 
 		// prepend "0" until zeros == 0
-		while (zeros--) integer = "0" + integer;
+		while (zeros--)
+			integer = "0" + integer;
 
 		var decimal:String;
 
@@ -60,7 +62,8 @@ package utils.number
 		zeros = Math.max(0, afterPoint - len);
 
 		// append "0" until zeros == 0
-		while (zeros--) decimal += "0";
+		while (zeros--)
+			decimal += "0";
 
 		// set sign if negative
 		var sign:String = negative ? "-" : "";

@@ -5,11 +5,11 @@ package utils.geom
 	import utils.conversion.degreesToRadians;
 
 	/**
-	 Rotates a Point around another Point by the specified angle.
+	   Rotates a Point around another Point by the specified angle.
 
-	 @param point: The Point to rotate.
-	 @param centerPoint: The Point to rotate this Point around.
-	 @param angle: The angle (in degrees) to rotate this point.
+	   @param point: The Point to rotate.
+	   @param centerPoint: The Point to rotate this Point around.
+	   @param angle: The angle (in degrees) to rotate this point.
 	 */
 	public function rotatePoint(point:Point, centerPoint:Point, angle:Number):void
 	{

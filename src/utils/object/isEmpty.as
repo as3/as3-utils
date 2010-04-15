@@ -1,22 +1,22 @@
 package utils.object
 {
 	/**
-	 Determines if object contains no value(s).
+	   Determines if object contains no value(s).
 
-	 @param obj: Object to derimine if empty.
-	 @return Returns <code>true</code> if object is empty; otherwise <code>false</code>.
-	 @example
-	 <code>
-	 var testNumber:Number;
-	 var testArray:Array   = new Array();
-	 var testString:String = "";
-	 var testObject:Object = new Object();
+	   @param obj: Object to derimine if empty.
+	   @return Returns <code>true</code> if object is empty; otherwise <code>false</code>.
+	   @example
+	   <code>
+	   var testNumber:Number;
+	   var testArray:Array   = new Array();
+	   var testString:String = "";
+	   var testObject:Object = new Object();
 
-	 trace(ObjectUtil.isEmpty(testNumber)); // traces "true"
-	 trace(ObjectUtil.isEmpty(testArray));  // traces "true"
-	 trace(ObjectUtil.isEmpty(testString)); // traces "true"
-	 trace(ObjectUtil.isEmpty(testObject)); // traces "true"
-	 </code>
+	   trace(ObjectUtil.isEmpty(testNumber)); // traces "true"
+	   trace(ObjectUtil.isEmpty(testArray));  // traces "true"
+	   trace(ObjectUtil.isEmpty(testString)); // traces "true"
+	   trace(ObjectUtil.isEmpty(testObject)); // traces "true"
+	   </code>
 	 */
 	public function isEmpty(obj:*):Boolean
 	{

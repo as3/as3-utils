@@ -1,12 +1,11 @@
-package
-utils.conversion
+package utils.conversion
 {
 
 	/**
-	 Converts seconds to hours.
+	   Converts seconds to hours.
 
-	 @param seconds: The number of seconds.
-	 @return Returns the number of hours.
+	   @param seconds: The number of seconds.
+	   @return Returns the number of hours.
 	 */
 	public function secondsToHours(seconds:Number):Number
 	{

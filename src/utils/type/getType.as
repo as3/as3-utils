@@ -6,11 +6,16 @@ package utils.type
 
 	public function getType(value:Object):Class
 	{
-		if (value is Class) {
+		if (value is Class)
+		{
 			return value as Class;
-		} else if (value is Proxy) {
-			return getDefinitionByName( getQualifiedClassName(value) ) as Class;
-		} else {
+		}
+		else if (value is Proxy)
+		{
+			return getDefinitionByName(getQualifiedClassName(value)) as Class;
+		}
+		else
+		{
 			return value.constructor as Class;
 		}
 	}

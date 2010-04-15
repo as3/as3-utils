@@ -9,6 +9,6 @@ package utils.number
 	 */
 	public function rol(x:int, n:int):int
 	{
-		return ( x << n ) | ( x >>> ( 32 - n ) );
+		return (x << n) | (x >>> (32 - n));
 	}
 }

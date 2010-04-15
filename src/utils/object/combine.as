@@ -4,13 +4,13 @@ package utils.object
 	{
 		var combinedObject:Object = {};
 		var property:String;
-		for(property  in defaultVars)
+		for (property in defaultVars)
 		{
-			combinedObject[ property ] = defaultVars[ property ];
+			combinedObject[property] = defaultVars[property];
 		}
 		for (property in additionalVars)
 		{
-			combinedObject[ property ] = additionalVars[ property ];
+			combinedObject[property] = additionalVars[property];
 		}
 		return combinedObject;
 	}

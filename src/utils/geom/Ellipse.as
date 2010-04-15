@@ -1,44 +1,44 @@
 /*
- CASA Lib for ActionScript 3.0
- Copyright (c) 2010, Aaron Clinger & Contributors of CASA Lib
- All rights reserved.
+   CASA Lib for ActionScript 3.0
+   Copyright (c) 2010, Aaron Clinger & Contributors of CASA Lib
+   All rights reserved.
 
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions are met:
 
- - Redistributions of source code must retain the above copyright notice,
- this list of conditions and the following disclaimer.
+   - Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
 
- - Redistributions in binary form must reproduce the above copyright notice,
- this list of conditions and the following disclaimer in the documentation
- and/or other materials provided with the distribution.
+   - Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
 
- - Neither the name of the CASA Lib nor the names of its contributors
- may be used to endorse or promote products derived from this software
- without specific prior written permission.
+   - Neither the name of the CASA Lib nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
 
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGE.
+   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+   POSSIBILITY OF SUCH DAMAGE.
  */
 package utils.geom
 {
 	import flash.geom.Point;
 
 	/**
-	 Stores position and size of an ellipse (circle or oval).
+	   Stores position and size of an ellipse (circle or oval).
 
-	 @author Aaron Clinger
-	 @author Mike Creighton
-	 @version 04/13/08
+	   @author Aaron Clinger
+	   @author Mike Creighton
+	   @version 04/13/08
 	 */
 	public class Ellipse
 	{
@@ -49,12 +49,12 @@ package utils.geom
 
 
 		/**
-		 Creates new Ellipse object.
+		   Creates new Ellipse object.
 
-		 @param x: The horizontal position of the ellipse.
-		 @param y: The vertical position of the ellipse.
-		 @param width: Width of the ellipse at its widest horizontal point.
-		 @param height: Height of the ellipse at its tallest point.
+		   @param x: The horizontal position of the ellipse.
+		   @param y: The vertical position of the ellipse.
+		   @param width: Width of the ellipse at its widest horizontal point.
+		   @param height: Height of the ellipse at its tallest point.
 		 */
 		public function Ellipse(x:Number, y:Number, width:Number, height:Number)
 		{
@@ -65,7 +65,7 @@ package utils.geom
 		}
 
 		/**
-		 The horizontal coordinate of the point.
+		   The horizontal coordinate of the point.
 		 */
 		public function get x():Number
 		{
@@ -78,7 +78,7 @@ package utils.geom
 		}
 
 		/**
-		 The vertical coordinate of the point.
+		   The vertical coordinate of the point.
 		 */
 		public function get y():Number
 		{
@@ -91,7 +91,7 @@ package utils.geom
 		}
 
 		/**
-		 The width of the ellipse.
+		   The width of the ellipse.
 		 */
 		public function get width():Number
 		{
@@ -104,7 +104,7 @@ package utils.geom
 		}
 
 		/**
-		 The height of the rectangle.
+		   The height of the rectangle.
 		 */
 		public function get height():Number
 		{
@@ -117,7 +117,7 @@ package utils.geom
 		}
 
 		/**
-		 The center of the ellipse.
+		   The center of the ellipse.
 		 */
 		public function get center():Point
 		{
@@ -131,7 +131,7 @@ package utils.geom
 		}
 
 		/**
-		 The size of the ellipse, expressed as a Point object with the values of the width and height properties.
+		   The size of the ellipse, expressed as a Point object with the values of the width and height properties.
 		 */
 		public function get size():Point
 		{
@@ -139,9 +139,9 @@ package utils.geom
 		}
 
 		/**
-		 The circumference of the ellipse.
+		   The circumference of the ellipse.
 
-		 @usageNote Calculating the circumference of an ellipse is difficult; this is an approximation but should be fine for most cases.
+		   @usageNote Calculating the circumference of an ellipse is difficult; this is an approximation but should be fine for most cases.
 		 */
 		public function get perimeter():Number
 		{
@@ -149,7 +149,7 @@ package utils.geom
 		}
 
 		/**
-		 The area of the ellipse.
+		   The area of the ellipse.
 		 */
 		public function get area():Number
 		{
@@ -157,11 +157,11 @@ package utils.geom
 		}
 
 		/**
-		 Finds the <code>x</code>, <code>y</code> position of the degree along the circumference of the ellipse.
+		   Finds the <code>x</code>, <code>y</code> position of the degree along the circumference of the ellipse.
 
-		 @param degree: Number representing a degree on the ellipse.
-		 @return A Point object.
-		 @usageNote <code>degree</code> can be over 360 or even negitive numbers; minding <code>0 = 360 = 720</code>, <code>540 = 180</code>, <code>-90 = 270</code>, etc.
+		   @param degree: Number representing a degree on the ellipse.
+		   @return A Point object.
+		   @usageNote <code>degree</code> can be over 360 or even negitive numbers; minding <code>0 = 360 = 720</code>, <code>540 = 180</code>, <code>-90 = 270</code>, etc.
 		 */
 		public function getPointOfDegree(degree:Number):Point
 		{
@@ -173,10 +173,10 @@ package utils.geom
 		}
 
 		/**
-		 Finds if point is contained inside the ellipse perimeter.
+		   Finds if point is contained inside the ellipse perimeter.
 
-		 @param point: A Point object.
-		 @return Returns <code>true</code> if shape's area contains point; otherwise <code>false</code>.
+		   @param point: A Point object.
+		   @return Returns <code>true</code> if shape's area contains point; otherwise <code>false</code>.
 		 */
 		public function containsPoint(point:Point):Boolean
 		{
@@ -189,10 +189,10 @@ package utils.geom
 		}
 
 		/**
-		 Determines if the Ellipse specified in the <code>ellipse</code> parameter is equal to this Ellipse object.
+		   Determines if the Ellipse specified in the <code>ellipse</code> parameter is equal to this Ellipse object.
 
-		 @param ellipse: An Ellipse object.
-		 @return Returns <code>true</code> if object is equal to this Ellipse; otherwise <code>false</code>.
+		   @param ellipse: An Ellipse object.
+		   @return Returns <code>true</code> if object is equal to this Ellipse; otherwise <code>false</code>.
 		 */
 		public function equals(ellipse:Ellipse):Boolean
 		{
@@ -200,7 +200,7 @@ package utils.geom
 		}
 
 		/**
-		 @return A new Ellipse object with the same values as this Ellipse.
+		   @return A new Ellipse object with the same values as this Ellipse.
 		 */
 		public function clone():Ellipse
 		{

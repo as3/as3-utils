@@ -7,7 +7,8 @@ package utils.textField
 	/**
 	 * Create a <code>TextField</code> instance and return it.
 	 */
-	public function createField(str:String, x:Number = 0, y:Number = 0, width:Number = 200, height:Number = 20, multiline:Boolean = false, font:String = "Verdana", size:Number = 9, color:uint = 0, autoSize:String = 'left', embedFonts:Boolean = false, selectable:Boolean = false, css:StyleSheet = null):TextField
+	public function createField(str:String, x:Number = 0, y:Number = 0, width:Number = 200, height:Number = 20, multiline:Boolean = false, font:String = "Verdana", size:Number = 9, color:uint = 0,
+								autoSize:String = 'left', embedFonts:Boolean = false, selectable:Boolean = false, css:StyleSheet = null):TextField
 	{
 		var tf:TextField = new TextField();
 		var fmt:TextFormat = new TextFormat(font, size, color);

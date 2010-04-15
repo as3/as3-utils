@@ -1,10 +1,10 @@
 package utils.object
 {
 	/**
-	 Creates an Array comprised of all the keys in an Object.
+	   Creates an Array comprised of all the keys in an Object.
 
-	 @param obj: Object in which to find keys.
-	 @return Array containing all the string key names.
+	   @param obj: Object in which to find keys.
+	   @return Array containing all the string key names.
 	 */
 	public function getKeys(obj:Object):Array
 	{

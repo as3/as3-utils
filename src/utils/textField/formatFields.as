@@ -15,7 +15,8 @@ package utils.textField
 		{
 			var tf:TextField = o as TextField;
 			tf.setTextFormat(textFormat);
-		} else if (o is DisplayObject)
+		}
+		else if (o is DisplayObject)
 		{
 			for (var i:String in o)
 			{

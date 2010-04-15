@@ -5,18 +5,18 @@ package utils.draw
 	import utils.geom.Ellipse;
 
 	/**
-	 Draws a circular wedge.
+	   Draws a circular wedge.
 
-	 @param graphics: The location where drawing should occur.
-	 @param ellipse: An Ellipse object that contains the size and position of the shape.
-	 @param startAngle: The starting angle of wedge in degrees.
-	 @param arc: The sweep of the wedge in degrees.
-	 @usage
-	 <code>
-	 this.graphics.beginFill(0xFF00FF);
-	 DrawUtil.drawWedge(this.graphics, new Ellipse(0, 0, 300, 200), 0, 300);
-	 this.graphics.endFill();
-	 </code>
+	   @param graphics: The location where drawing should occur.
+	   @param ellipse: An Ellipse object that contains the size and position of the shape.
+	   @param startAngle: The starting angle of wedge in degrees.
+	   @param arc: The sweep of the wedge in degrees.
+	   @usage
+	   <code>
+	   this.graphics.beginFill(0xFF00FF);
+	   DrawUtil.drawWedge(this.graphics, new Ellipse(0, 0, 300, 200), 0, 300);
+	   this.graphics.endFill();
+	   </code>
 	 */
 	public function drawWedge(graphics:Graphics, ellipse:Ellipse, startAngle:Number, arc:Number):void
 	{
@@ -49,7 +49,8 @@ package utils.draw
 			angle += theta;
 			angleMid = angle - (theta * .5);
 
-			graphics.curveTo(x + Math.cos(angleMid) * (radius / Math.cos(theta * .5)), y + Math.sin(angleMid) * (yRadius / Math.cos(theta * .5)), x + Math.cos(angle) * radius, y + Math.sin(angle) * yRadius);
+			graphics.curveTo(x + Math.cos(angleMid) * (radius / Math.cos(theta * .5)), y + Math.sin(angleMid) * (yRadius / Math.cos(theta * .5)), x + Math.cos(angle) * radius,
+																		 y + Math.sin(angle) * yRadius);
 		}
 
 		graphics.lineTo(x, y);

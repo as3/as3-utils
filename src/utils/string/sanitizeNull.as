@@ -5,6 +5,6 @@ package utils.string
 	 */
 	public function sanitizeNull(str:String):String
 	{
-		return ( str == null || str == "null") ? "" : str;
+		return (str == null || str == "null") ? "" : str;
 	}
 }

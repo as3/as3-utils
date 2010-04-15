@@ -7,6 +7,6 @@ package utils.color
 	 */
 	public function resetColor(src:DisplayObject):void
 	{
-		setTransform(src, {ra:100, ga:100, ba:100, rb:0, gb:0, bb:0});
+		setTransform(src, { ra: 100, ga: 100, ba: 100, rb: 0, gb: 0, bb: 0 });
 	}
 }

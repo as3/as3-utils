@@ -41,7 +41,7 @@ package utils.color
 				}
 				total += obj[colorspace];
 				count++;
-				//trace( "colorspace: '" + colorspace + "' = " + obj[colorspace] );
+					//trace( "colorspace: '" + colorspace + "' = " + obj[colorspace] );
 			}
 		}
 		// return the average value

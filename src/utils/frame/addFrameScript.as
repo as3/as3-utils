@@ -3,13 +3,13 @@ package utils.frame
 	import flash.display.MovieClip;
 
 	/**
-	 Calls a specified method when a specific frame is reached in a MovieClip timeline.
+	   Calls a specified method when a specific frame is reached in a MovieClip timeline.
 
-	 @param target: The MovieClip that contains the <code>frame</code>.
-	 @param frame: The frame to be notified when reached. Can either be a frame number (<code>uint</code>), or the frame label (<code>String</code>).
-	 @param notify: The function that will be called when the frame is reached.
-	 @return Returns <code>true</code> if the frame was found; otherwise <code>false</code>.
-	 @throws ArguementTypeError if you pass a type other than a <code>String</code> or <code>uint</code> to parameter <code>frame</code>.
+	   @param target: The MovieClip that contains the <code>frame</code>.
+	   @param frame: The frame to be notified when reached. Can either be a frame number (<code>uint</code>), or the frame label (<code>String</code>).
+	   @param notify: The function that will be called when the frame is reached.
+	   @return Returns <code>true</code> if the frame was found; otherwise <code>false</code>.
+	   @throws ArguementTypeError if you pass a type other than a <code>String</code> or <code>uint</code> to parameter <code>frame</code>.
 	 */
 	public function addFrameScript(target:MovieClip, frame:*, notify:Function):Boolean
 	{

@@ -1,17 +1,17 @@
 package utils.number
 {
 	/**
-	 Formats a number.
+	   Formats a number.
 
-	 @param value: The number you wish to format.
-	 @param minLength: The minimum length of the number.
-	 @param thouDelim: The character used to seperate thousands.
-	 @param fillChar: The leading character used to make the number the minimum length.
-	 @return Returns the formated number as a String.
-	 @example
-	 <code>
-	 trace(NumberUtil.format(1234567, 8, ",")); // Traces 01,234,567
-	 </code>
+	   @param value: The number you wish to format.
+	   @param minLength: The minimum length of the number.
+	   @param thouDelim: The character used to seperate thousands.
+	   @param fillChar: The leading character used to make the number the minimum length.
+	   @return Returns the formated number as a String.
+	   @example
+	   <code>
+	   trace(NumberUtil.format(1234567, 8, ",")); // Traces 01,234,567
+	   </code>
 	 */
 	public function format(value:Number, minLength:uint, thouDelim:String = null, fillChar:String = null):String
 	{

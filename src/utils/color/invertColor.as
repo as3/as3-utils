@@ -9,7 +9,7 @@ package utils.color
 	{
 		var t:Object = getTransform(src);
 		setTransform(src, {
-			ra : -t['ra'], ga : -t['ga'], ba : -t['ba'], rb : 255 - t['rb'], gb : 255 - t['gb'], bb : 255 - t['bb']
-		});
+				ra: -t['ra'], ga: -t['ga'], ba: -t['ba'], rb: 255 - t['rb'], gb: 255 - t['gb'], bb: 255 - t['bb']
+			});
 	}
 }

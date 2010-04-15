@@ -8,7 +8,7 @@ package utils.xml
 		{
 			out = x.parent().children()[x.childIndex() + count];
 		}
-		catch(e:Error)
+		catch (e:Error)
 		{
 			return null;
 		}

@@ -14,7 +14,7 @@ package utils.color
 	 */
 	public function setTransform(src:DisplayObject, transformObject:Object):void
 	{
-		var t:Object = {ra:100, rb:0, ga:100, gb:0, ba:100, bb:0, aa:100, ab:0};
+		var t:Object = { ra: 100, rb: 0, ga: 100, gb: 0, ba: 100, bb: 0, aa: 100, ab: 0 };
 		for (var p:String in transformObject)
 		{
 			t[p] = transformObject[p];

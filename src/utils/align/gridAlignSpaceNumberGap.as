@@ -47,7 +47,8 @@ package utils.align
 
 				col++;
 			}
-			else break;
+			else
+				break;
 		}
 	}
 }

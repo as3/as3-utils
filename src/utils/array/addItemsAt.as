@@ -1,21 +1,21 @@
 package utils.array
 {
 	/**
-	 Modifies original Array by adding all the elements from another Array at a specified position.
+	   Modifies original Array by adding all the elements from another Array at a specified position.
 
-	 @param tarArray: Array to add elements to.
-	 @param items: Array of elements to add.
-	 @param index: Position where the elements should be added.
-	 @return Returns <code>true</code> if the Array was changed as a result of the call; otherwise <code>false</code>.
-	 @example
-	 <code>
-	 var alphabet:Array = new Array("a", "d", "e");
-	 var parts:Array    = new Array("b", "c");
+	   @param tarArray: Array to add elements to.
+	   @param items: Array of elements to add.
+	   @param index: Position where the elements should be added.
+	   @return Returns <code>true</code> if the Array was changed as a result of the call; otherwise <code>false</code>.
+	   @example
+	   <listing version="3.0">
+	   var alphabet:Array = new Array("a", "d", "e");
+	   var parts:Array    = new Array("b", "c");
 
-	 ArrayUtil.addItemsAt(alphabet, parts, 1);
+	   ArrayUtil.addItemsAt(alphabet, parts, 1);
 
-	 trace(alphabet);
-	 </code>
+	   trace(alphabet);
+	   </listing>
 	 */
 	public function addItemsAt(tarArray:Array, items:Array, index:int = 0x7FFFFFFF):Boolean
 	{

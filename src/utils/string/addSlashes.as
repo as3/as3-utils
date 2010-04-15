@@ -9,7 +9,8 @@ package utils.string
 	public function addSlashes(str:String, chars:String = "\""):String
 	{
 		// return the unaltered string if str or chars are null or empty
-		if (!str || !chars) return str;
+		if (!str || !chars)
+			return str;
 
 		// slash unsafe characters
 		chars = slashUnsafeChars(chars);

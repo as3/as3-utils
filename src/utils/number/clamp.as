@@ -9,8 +9,10 @@ package utils.number
 	 */
 	public function clamp(val:Number, min:Number, max:Number):Number
 	{
-		if (val < min) return min;
-		if (val > max) return max;
+		if (val < min)
+			return min;
+		if (val > max)
+			return max;
 		return val;
 	}
 }

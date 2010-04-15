@@ -9,7 +9,7 @@ package utils.color
 	 */
 	public function HueToRGB(min:Number, max:Number, hue:Number):Object
 	{
-		const HUE_MAX : uint = 360;
+		const HUE_MAX:uint = 360;
 
 		var mu:Number, md:Number, F:Number, n:Number;
 		while (hue < 0)
@@ -26,17 +26,17 @@ package utils.color
 		switch (n)
 		{
 			case 0:
-				return {r: max, g: mu, b: min};
+				return { r: max, g: mu, b: min };
 			case 1:
-				return {r: md, g: max, b: min};
+				return { r: md, g: max, b: min };
 			case 2:
-				return {r: min, g: max, b: mu};
+				return { r: min, g: max, b: mu };
 			case 3:
-				return {r: min, g: md, b: max};
+				return { r: min, g: md, b: max };
 			case 4:
-				return {r: mu, g: min, b: max};
+				return { r: mu, g: min, b: max };
 			case 5:
-				return {r: max, g: min, b: md};
+				return { r: max, g: min, b: md };
 		}
 		return null;
 	}

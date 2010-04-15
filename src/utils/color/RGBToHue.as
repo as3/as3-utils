@@ -29,20 +29,26 @@ package utils.color
 		{
 			if (red == max)
 			{
-				if (blue == min) n = 0;
-				else n = 5;
+				if (blue == min)
+					n = 0;
+				else
+					n = 5;
 				break;
 			}
 
 			if (green == max)
 			{
-				if (blue == min) n = 1;
-				else n = 2;
+				if (blue == min)
+					n = 1;
+				else
+					n = 2;
 				break;
 			}
 
-			if (red == min) n = 3;
-			else n = 4;
+			if (red == min)
+				n = 3;
+			else
+				n = 4;
 			break;
 		}
 

@@ -20,7 +20,8 @@ package utils.display
 					break;
 				}
 			}
-			if (isOK) filteredChildren.push(child);
+			if (isOK)
+				filteredChildren.push(child);
 		}
 		return filteredChildren;
 	}

@@ -5,7 +5,7 @@ package utils.color
 
 	/**
 	 * Sample &amp; average the <i>Green</i> (RGB) value from a display object or one of its region.
-	 * 
+	 *
 	 * @param src The DisplayObject
 	 * @param accuracy Percentage of pixels to sample when averaging.
 	 * @param region to sample from [Default: null = entire src object].

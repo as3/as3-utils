@@ -5,7 +5,7 @@ package utils.color
 
 	/**
 	 * Sample &amp; average the <i>Lightness</i> (HSL) value from a display object or one of its region.
-	 * 
+	 *
 	 * @param src The DisplayObject
 	 * @param accuracy percentage of pixels to sample when averaging.
 	 * @param region to sample from [Default: null = entire src object].

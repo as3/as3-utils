@@ -19,7 +19,7 @@ package utils.color
 
 		if (max == 0)
 		{
-			return {h:0, s:0, v:0};
+			return { h: 0, s: 0, v: 0 };
 		}
 
 		v = max;
@@ -27,6 +27,6 @@ package utils.color
 
 		h = RGBToHue(red, green, blue);
 
-		return {h:h, s:s, v:v};
+		return { h: h, s: s, v: v };
 	}
 }

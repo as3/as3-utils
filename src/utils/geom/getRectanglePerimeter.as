@@ -3,9 +3,9 @@ package utils.geom
 	import flash.geom.Rectangle;
 
 	/**
-	 Calculates the perimeter of a rectangle.
+	   Calculates the perimeter of a rectangle.
 
-	 @param rect: Rectangle to determine the perimeter of.
+	   @param rect: Rectangle to determine the perimeter of.
 	 */
 	public function getRectanglePerimeter(rect:Rectangle):Number
 	{

@@ -13,7 +13,8 @@ package utils.textField
 		{
 			var tf:TextField = o as TextField;
 			tf.text = tf.htmlText = '';
-		} else if (o is DisplayObject)
+		}
+		else if (o is DisplayObject)
 		{
 			for (var i:String in o)
 			{

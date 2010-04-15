@@ -18,10 +18,7 @@ package utils.display
 	{
 		var ret:Array = [];
 
-		for (var cur:DisplayObject = includeSelf ? obj : obj.parent;
-		     cur != stopAt && cur != null;
-		     cur = cur.parent
-				)
+		for (var cur:DisplayObject = includeSelf ? obj : obj.parent; cur != stopAt && cur != null; cur = cur.parent)
 		{
 			ret.push(cur);
 		}

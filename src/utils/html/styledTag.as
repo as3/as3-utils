@@ -1,5 +1,6 @@
 package utils.html
 {
+
 	/**
 	 * Generate a styled tag.
 	 */

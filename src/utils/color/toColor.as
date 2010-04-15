@@ -8,7 +8,8 @@ package utils.color
 		if (str.substr(0, 2) == '0x')
 		{
 			str = str.substr(2);
-		} else if (str.substr(0, 1) == '#')
+		}
+		else if (str.substr(0, 1) == '#')
 		{
 			str = str.substr(1);
 		}

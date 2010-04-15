@@ -22,7 +22,7 @@ package utils.color
 		// L
 		if (l == 0)
 		{
-			return {h:h, l:0, s:1};
+			return { h: h, l: 0, s: 1 };
 		}
 
 		//delta = (max - min) / 2;
@@ -40,6 +40,6 @@ package utils.color
 		// H
 		h = RGBToHue(red, green, blue);
 
-		return {h:h, l:l, s:s};
+		return { h: h, l: l, s: s };
 	}
 }
