@@ -1,9 +1,8 @@
 /**
  * Created by IntelliJ IDEA.
- * User: Ian
+ * User: Ian McLean
  * Date: Sep 26, 2010
  * Time: 1:59:33 PM
- * To change this template use File | Settings | File Templates.
  */
 package utils.range {
 

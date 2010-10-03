@@ -16,7 +16,8 @@ package utils.object
 	 *      null.
 	 * @author Jackson Dunstan
 	 */
-	public function toString(obj:Object = null, delimiter:String = "\n"):String
+    
+	function toString(obj:Object = null, delimiter:String = "\n"):String
 	{
 		if (obj == null || delimiter == null)
 		{
