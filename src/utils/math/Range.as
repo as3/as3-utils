@@ -184,7 +184,7 @@ package utils.math
 		 */
 		public function overlaps(range:Range):Boolean
 		{
-			if (this.equals(range) || this.contains(range) || range.contains(this) || this.isWithinRange(range.start) || this.isWithinRange(range.end))
+			if (this.equals(range) || this.contains(range) || range.contains(Range(this)) || this.isWithinRange(range.start) || this.isWithinRange(range.end))
 				return true;
 
 			return false;
