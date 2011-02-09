@@ -2,3 +2,4 @@ target
 bin
 bin-debug
 bin-release
+*.iml
