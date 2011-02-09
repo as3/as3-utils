@@ -3,7 +3,7 @@ package utils.align
 	import flash.display.DisplayObject;
 
 	/**
-	 * interpolate the DisplayObject at weight t == (0 <= t <= 1).  a position 1 would position the object to the right-most bounds, and tx=0 would position to the left
+	 * interpolate the DisplayObject at weight t == (0 less or equal t less or equal 1).  a position 1 would position the object to the right-most bounds, and tx=0 would position to the left
 	 *
 	 * @param DisplayObject DisplayObject to position
 	 * @param ty weight of verticle position from 0 to 1
