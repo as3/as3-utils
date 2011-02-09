@@ -4,8 +4,6 @@ package utils.type
 	 * Creates an instance of the given class and passes the arguments to
 	 * the constructor.
 	 *
-	 * TODO find a generic solution for this. Currently we support constructors
-	 * with a maximum of 10 arguments.
 	 *
 	 * @param clazz the class from which an instance will be created
 	 * @param args the arguments that need to be passed to the constructor
@@ -14,6 +12,9 @@ package utils.type
 	{
 		var result:*;
 		var a:Array = (args == null) ? [] : args;
+
+        if(args.length > 10)
+            throw new Error("newInstance has a limit of 10 arguments.");
 
 		switch (a.length)
 		{

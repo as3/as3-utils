@@ -12,7 +12,6 @@ package utils.string
 	 */
 	public function stringHasValue(s:String):Boolean
 	{
-		//todo: this needs a unit test
 		return (s != null && s.length > 0);
 	}
 }
