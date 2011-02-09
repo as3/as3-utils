@@ -1,7 +1,7 @@
 package utils.align
 {
 	/**
-	 * interpolate multiple DisplayObjects at multiple weights at t == (0 <= t <= 1).  at tx=1, the position of the object would be aligned to the right-most bounds, and tx=0 would position to the left
+	 * interpolate multiple DisplayObjects at multiple weights at t == (0 less or equal t less or equal 1).  at tx=1, the position of the object would be aligned to the right-most bounds, and tx=0 would position to the left
 	 *
 	 * @param DisplayObject DisplayObject to position
 	 * @param positionArray weight array of horizontal position from 0 to 1
