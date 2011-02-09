@@ -27,8 +27,7 @@ package utils.object
 					str += prefix + s + " = " + scan(obj[s], depth - 1, prefix + "\t") + "\n";
 				}
 				return str != "" ? ("[" + classDef.@name + "] {\n" + str + prefix + "}\n") : ((obj != null) ? obj + "" : "null");
-			}
-
+			};
 
 		return scan(obj, depth, "");
 	}

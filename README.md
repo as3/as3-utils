@@ -1,12 +1,12 @@
-# as3-utils 
+# as3-utils
 
 ActionScript 3 Utilities and Object Extensions provided as reusable package-level functions that solve common problems.
 
 # What have you got for me?
 
-HEAPS, too much to list here right now. 
+HEAPS, too much to list here right now.
 
-Oh ok here's a taste, there are umpteen utils for 
+Oh ok here's a taste, there are umpteen utils for
 
 - array
 - color
@@ -15,7 +15,7 @@ Oh ok here's a taste, there are umpteen utils for
 - event
 - garbage collection
 - html
-- number 
+- number
 - string
 - validation
 - and [more](http://github.com/as3/as3-utils/tree/master/src/utils/).
@@ -35,6 +35,7 @@ Fork the [as3-utils project](http://github.com/as3/as3-utils) on GitHub, see the
 
 - John Lindquist [@johnlindquist](http://twitter.com/johnlindquist)
 - Drew Bourne [@drewbourne](http://twitter.com/drewbourne)
+- Joel Hooks [@jhooks](http://twitter.com/jhooks)
 - You.
 
 # Giving credit where credit is due

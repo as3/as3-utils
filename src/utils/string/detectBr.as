@@ -5,6 +5,6 @@ package utils.string
 	 */
 	public function detectBr(str:String):Boolean
 	{
-		return (str.split("<br").length > 1) ? true : false;
+		return str.split("<br").length > 1;
 	}
 }
