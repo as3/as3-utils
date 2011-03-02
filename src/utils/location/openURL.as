@@ -16,7 +16,7 @@ package utils.location {
 	 * @author Shane McCartney
 	 * @author David Nelson
 	 */
-	public function openURL(request:*, window:String = windowNames.WINDOW_SELF):void {
+	public function openURL(request:*, window:String = "_self" /* windowNames.WINDOW_SELF */):void {
 		var r:* = request;
 
 		if(r is String) {
@@ -25,7 +25,7 @@ package utils.location {
 			throw new Error("request");
 		}
 
-		if(window == windowNames.WINDOW_BLANK && ExternalInterface.available && !isIDE && request._data === null) {
+		if(window == windowNames.WINDOW_BLANK && ExternalInterface.available && !isIDE() && request._data === null) {
 			if(openWindow(r.url, window)) return
 		}
 

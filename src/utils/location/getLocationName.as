@@ -1,7 +1,5 @@
 package utils.location {
 	import flash.external.ExternalInterface;
-	import flash.net.URLRequest;
-	import flash.net.navigateToURL;
 
 
 
@@ -17,7 +15,7 @@ package utils.location {
 		var out:String;
 		var browserAgent:String;
 
-		if(isStandAlone) {
+		if(isStandAlone()) {
 			out = locationNames.STANDALONE_PLAYER;
 		}
 

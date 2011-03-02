@@ -10,7 +10,7 @@ package utils.location {
 	 * @author Shane McCartney
 	 * @author David Nelson
 	 */
-	public function get isStandAlone():Boolean {
+	public function isStandAlone():Boolean {
 		return Capabilities.playerType == "StandAlone";
 	}
 }

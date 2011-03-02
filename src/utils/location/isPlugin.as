@@ -10,7 +10,7 @@ package utils.location {
 	 * @author Shane McCartney
 	 * @author David Nelson
 	 */
-	public function get isPlugin():Boolean {
+	public function isPlugin():Boolean {
 		return Capabilities.playerType == "PlugIn" || Capabilities.playerType == "ActiveX";
 	}
 }

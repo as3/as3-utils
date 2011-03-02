@@ -10,7 +10,7 @@ package utils.location {
 	 * @author Shane McCartney
 	 * @author David Nelson
 	 */
-	public function get isIDE():Boolean {
+	public function isIDE():Boolean {
 		return Capabilities.playerType == "External";
 	}
 }

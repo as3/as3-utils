@@ -10,7 +10,7 @@ package utils.location {
 	 * @author Shane McCartney
 	 * @author David Nelson
 	 */
-	public function get isAirApplication():Boolean {
+	public function isAirApplication():Boolean {
 		return Capabilities.playerType == "Desktop";
 	}
 }
