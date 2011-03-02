@@ -192,6 +192,9 @@ package utils.date {
 	 *      </pre>
 	 * @param dateToFormat Date object you wish to format
 	 * @param formatString Format of the outputted date String. See the format characters options above.
+	 * @author Aaron Clinger
+	 * @author Shane McCartney
+	 * @author David Nelson
 	 */
 	public function formatDate(dateToFormat:Date, formatString:String):String {
 		var out:String = "";

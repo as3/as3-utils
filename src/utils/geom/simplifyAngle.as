@@ -11,6 +11,7 @@ package utils.geom {
 	 *      </pre>
 	 * @param value Angle to simplify
 	 * @return Supplied angle simplified
+	 * @author Vaclav Vancura (<a href="http://vancura.org">vancura.org</a>, <a href="http://twitter.com/vancura">@vancura</a>)
 	 */
 	public function simplifyAngle(value:Number):Number {
 		var _rotations:Number = Math.floor(value / 360);
