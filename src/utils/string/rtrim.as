@@ -1,9 +1,11 @@
-package utils.string
-{
+package utils.string {
+
+
+
 	/**
 	 *       Removes whitespace from the end of the specified string.
 	 *
-	 *       @param input The String whose ending whitespace will will be removed.
+	 *       @param value The String whose ending whitespace will will be removed.
 	 *
 	 *       @returns A String with whitespace removed from the end
 	 *
@@ -11,17 +13,13 @@ package utils.string
 	 *       @playerversion Flash 9.0
 	 *       @tiptext
 	 */
-	public function rtrim(input:String):String
-	{
-		var size:Number = input.length;
-		for (var i:Number = size; i > 0; i--)
-		{
-			if (input.charCodeAt(i - 1) > 32)
-			{
-				return input.substring(0, i);
-			}
+	public function rtrim(value:String):String {
+		var out:String = "";
+
+		if(value) {
+			out = value.replace(/\s+$/, "");
 		}
 
-		return "";
+		return out;
 	}
 }
