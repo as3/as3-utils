@@ -3,3 +3,8 @@ bin
 bin-debug
 bin-release
 *.iml
+.actionScriptProperties
+.flexLibProperties
+.project
+.settings/
+.DS_Store
