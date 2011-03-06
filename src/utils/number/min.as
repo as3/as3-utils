@@ -8,9 +8,9 @@ package utils.number
 	   @return Returns the smallest value, or the value out of the two that is defined and valid.
 	   @example
 	   <code>
-	   trace(NumberUtil.min(5, null)); // Traces 5
-	   trace(NumberUtil.min(5, "CASA")); // Traces 5
-	   trace(NumberUtil.min(5, 13)); // Traces 5
+	   trace(min(5, null)); // Traces 5
+	   trace(min(5, "CASA")); // Traces 5
+	   trace(min(5, 13)); // Traces 5
 	   </code>
 	 */
 	public function min(val1:*, val2:*):Number

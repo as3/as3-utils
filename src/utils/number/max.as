@@ -8,9 +8,9 @@ package utils.number
 	   @return Returns the largest value, or the value out of the two that is defined and valid.
 	   @example
 	   <code>
-	   trace(NumberUtil.max(-5, null)); // Traces -5
-	   trace(NumberUtil.max(-5, "CASA")); // Traces -5
-	   trace(NumberUtil.max(-5, -13)); // Traces -5
+	   trace(max(-5, null)); // Traces -5
+	   trace(max(-5, "CASA")); // Traces -5
+	   trace(max(-5, -13)); // Traces -5
 	   </code>
 	 */
 	public function max(val1:*, val2:*):Number
