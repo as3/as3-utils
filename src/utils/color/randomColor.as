@@ -1,7 +1,11 @@
 package utils.color
 {
-	public function randomColor():Number
-	{
-		return Number("0x" + Math.floor(Math.random() * 16777215).toString(16).toUpperCase())
+	/**
+	 * Returns a random color between 0x000000 and 0xFFFFFF
+	 * 
+	 * @author Mims Wright
+	 */
+	public function randomColor():uint {
+		return uint(Math.random() * 0xFFFFFF);
 	}
 }
