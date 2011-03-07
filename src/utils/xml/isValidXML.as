@@ -24,6 +24,6 @@ package utils.xml
 			return false;
 		}
 
-		return xml.nodeKind() == constants.ELEMENT;
+		return xml.nodeKind() == XMLConstants.ELEMENT;
 	}
 }

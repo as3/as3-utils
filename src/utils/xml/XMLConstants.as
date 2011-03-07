@@ -1,7 +1,10 @@
 package utils.xml
 {
 
-	public class constants
+	/**
+	 * Contains references to XML related string constants.
+	 */
+	public class XMLConstants
 	{
 		/**
 		 * Constant representing a text node type returned from XML.nodeKind.
