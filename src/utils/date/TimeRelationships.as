@@ -1,7 +1,7 @@
 package utils.date
 {
 
-	public class timeRelationships
+	public class TimeRelationships
 	{
 		//
 		// Milliseconds
