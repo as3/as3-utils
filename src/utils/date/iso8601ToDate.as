@@ -29,7 +29,7 @@ package utils.date {
 		var second:uint = 0;
 		var millisecond:uint = 0;
 
-		if(time[2] !== undefined) {
+		if(time[2] != undefined) {
 			var index:int = time[2].length;
 			var temp:Number;
 

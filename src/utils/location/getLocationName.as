@@ -26,13 +26,13 @@ package utils.location {
 
 				// determines brand of browser using a find index. If not found indexOf returns (-1).
 				// noinspection IfStatementWithTooManyBranchesJS
-				if(browserAgent !== null && browserAgent.indexOf("Firefox") >= 0) {
+				if(browserAgent != null && browserAgent.indexOf("Firefox") >= 0) {
 					out = locationNames.BROWSER_FIREFOX;
-				} else if(browserAgent !== null && browserAgent.indexOf("Safari") >= 0) {
+				} else if(browserAgent != null && browserAgent.indexOf("Safari") >= 0) {
 					out = locationNames.BROWSER_SAFARI;
-				} else if(browserAgent !== null && browserAgent.indexOf("MSIE") >= 0) {
+				} else if(browserAgent != null && browserAgent.indexOf("MSIE") >= 0) {
 					out = locationNames.BROWSER_IE;
-				} else if(browserAgent !== null && browserAgent.indexOf("Opera") >= 0) {
+				} else if(browserAgent != null && browserAgent.indexOf("Opera") >= 0) {
 					out = locationNames.BROWSER_OPERA;
 				} else {
 					out = locationNames.BROWSER_UNDEFINED;

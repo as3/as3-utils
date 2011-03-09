@@ -13,6 +13,6 @@ package utils.date {
 		var m:Number = Math.floor((sec % 3600) / 60);
 		var s:Number = Math.floor((sec % 3600) % 60);
 
-		return (h === 0 ? "" : (h < 10 ? "0" + String(h) + ":" : String(h) + ":")) + (m < 10 ? "0" + String(m) : String(m)) + ":" + (s < 10 ? "0" + String(s) : String(s));
+		return (h == 0 ? "" : (h < 10 ? "0" + String(h) + ":" : String(h) + ":")) + (m < 10 ? "0" + String(m) : String(m)) + ":" + (s < 10 ? "0" + String(s) : String(s));
 	}
 }

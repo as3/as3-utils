@@ -25,7 +25,7 @@ package utils.location {
 			throw new Error("request");
 		}
 
-		if(window == windowNames.WINDOW_BLANK && ExternalInterface.available && !isIDE() && request._data === null) {
+		if(window == windowNames.WINDOW_BLANK && ExternalInterface.available && !isIDE() && request._data == null) {
 			if(openWindow(r.url, window)) return
 		}
 
