@@ -7,16 +7,16 @@ package utils.draw
 	/**
 	   Draws a circular wedge.
 
-	   @param graphics: The location where drawing should occur.
-	   @param ellipse: An Ellipse object that contains the size and position of the shape.
-	   @param startAngle: The starting angle of wedge in degrees.
-	   @param arc: The sweep of the wedge in degrees.
+	   @param graphics The location where drawing should occur.
+	   @param ellipse An Ellipse object that contains the size and position of the shape.
+	   @param startAngle The starting angle of wedge in degrees.
+	   @param arc The sweep of the wedge in degrees.
 	   @usage
-	   <code>
+	   <listing version="3.0">
 	   this.graphics.beginFill(0xFF00FF);
 	   DrawUtil.drawWedge(this.graphics, new Ellipse(0, 0, 300, 200), 0, 300);
 	   this.graphics.endFill();
-	   </code>
+	   </listing>
 	 */
 	public function drawWedge(graphics:Graphics, ellipse:Ellipse, startAngle:Number, arc:Number):void
 	{
