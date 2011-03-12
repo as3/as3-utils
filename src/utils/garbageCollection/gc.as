@@ -2,6 +2,7 @@ package utils.garbageCollection
 {
 	import flash.net.LocalConnection;
 
+	// TODO: Needs documentation
 	public function gc():void
 	{
 		try
