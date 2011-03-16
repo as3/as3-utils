@@ -6,7 +6,7 @@ package utils.mvc
 	/**
 	 * A default implementation of IView based on MovieClip.
 	 * 
-	 * @author From original AS2 code by Colin Moock modified by Mims Wright 
+	 * @author From original AS2 code by Colin Moock modified by Mims Wright http://www.moock.org/lectures/mvc/
 	 */
 	public class AbstractView extends MovieClip implements IView
 	{

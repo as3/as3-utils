@@ -4,7 +4,7 @@ package utils.mvc
 	 * Provides basic implementation of the "controller" of
 	 * a Model/View/Controller triad.
 	 * 
-	 * @author From original AS2 code by Colin Moock modified by Mims Wright
+	 * @author From original AS2 code by Colin Moock modified by Mims Wright http://www.moock.org/lectures/mvc/
 	 */
 	public class AbstractController implements IController
 	{
