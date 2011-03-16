@@ -6,7 +6,7 @@ package utils.mvc
 	 * Specifies the minimum functionality that the "controller" of
 	 * a Model/View/Controller triad must provide.
 	 * 
-	 * @author From original AS2 code by Colin Moock modified by Mims Wright
+	 * @author From original AS2 code by Colin Moock modified by Mims Wright http://www.moock.org/lectures/mvc/
 	 */
 	public interface IController
 	{
