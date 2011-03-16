@@ -8,3 +8,4 @@ bin-release
 .project
 .settings/
 .DS_Store
+org.eclipse.core.resources.prefs
