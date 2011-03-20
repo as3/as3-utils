@@ -6,6 +6,10 @@ If you have code in a personal library / pile of snippets that you'd like to add
 
 ##What to contribute
 
+###Flash Player Versions
+
+_I assume all code is for FP10.0+ Should we be looking at different branches for older or newer versions?_
+
 ###Functions vs. Classes
 
 We've been leaning towards a *functions only* approach. This means:
