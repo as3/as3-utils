@@ -22,7 +22,7 @@ We've been leaning towards a *functions only* approach. This means:
 
 If you have a utility class that you'd like to add to the library, try breaking it into smaller functions before adding it. In other words, don't add `com.you.ArrayUtil`, instead add the functions within as standalone .as files. 
 
-_Are there cases where classes are okay? It seems like more generic classes that act as datatypes could be okay especially if their set of functions was separated out of the class. A good example might be 2d or 3d Vectors or commonly used interfaces like IDisplayObject._
+As a general guideline, contributors should always favor "snippets" over more complex object-oriented functionality. Basically, you should be able to copy/paste the function into your own class and have it "just work". Anything more complex than that would need to have an argument as to why it belongs in a utils library rather than its own library.
 
 ####Constants
 
@@ -44,13 +44,9 @@ If the constant value is part of an enumeration of values, you may include it in
 		}
 	}
 
-###Contributing Libraries
+###Integrating Libraries
 
-_I'm not sure what our policy should be for adding complete code libraries or SWCs. I could see things like the [AS3 Data Structures](http://code.google.com/p/polygonal/wiki/DataStructures) or the [AS3 Core Lib](https://github.com/mikechambers/as3corelib) being useful but maybe it's better to keep them separate. We could create a text list of recommended libraries and put it in the docs?_
-
-_Perhaps we could create a branch that includes other complete libraries as is so they can be updated as needed._
-
-_It would be good to create a "libraries to integrate" list as well._
+There's a list of libraries to integrate into AS3-utils. If you'd like to pull in the utility functions from them, please do so with respect to the licenses and authors of the original code. Again, this is a snippet library rather than a collection of classes so break down the code into atomic functions with as few dependencies as possible. 
 
 ###Naming
 
