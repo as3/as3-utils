@@ -1,14 +1,15 @@
 package utils.geom {
 	import flash.geom.Point;
 
-
+	// todo: author?
 
 	/**
-	 * Rounds x and y of a Point.
-	 * @param value Source Point to be rounded
-	 * @return Rounded Point
+	 * Returns a new point with x and y values rounded down to the nearest int.
+	 * 
+	 * @param value Source Point to be rounded.
+	 * @return Point A new point with x and y rounded down to an int.
 	 */
-	public function roundPoint(value:Point):Point {
-		return new Point(int(value.x), int(value.y));
+	public function roundPoint(point:Point):Point {
+		return new Point(int(point.x), int(point.y));
 	}
 }
