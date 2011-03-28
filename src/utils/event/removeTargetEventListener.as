@@ -1,12 +1,15 @@
 package utils.event
 {
 	import flash.display.DisplayObject;
+	import flash.events.IEventDispatcher;
 
-	public function removeTargetEventListener(_target:DisplayObject, _type:String, _listener:Function, _useCapture:Boolean = false):void
+	public function removeTargetEventListener(target:IEventDispatcher, 
+											  type:String, 
+											  listener:Function, 
+											  useCapture:Boolean = false):void
 	{
-		if (_target != null)
-		{
-			_target.removeEventListener(_type, _listener, _useCapture);
-		}
+		if(!target) return;
+		
+		target.removeEventListener(type, listener, useCapture);
 	}
 }
