@@ -3,7 +3,7 @@ package utils.string {
 
 
 	/**
-	 * Determins the number of words in a String.
+	 * Determines the number of words in a String.
 	 * @param value Input String
 	 * @returns Number of words in a String
 	 * @author Aaron Clinger

@@ -1,7 +1,9 @@
-package utils.color
-{
+package utils.color {
+
+
+
 	/**
-	 * Convert an RGB Hexidecimal value to HSL values
+	 * Convert an RGB Hexadecimal value to HSL values
 	 * @param red           0 - 1 scale.
 	 * @param green         0 - 1 scale.
 	 * @param blue          0 - 1 scale.
@@ -10,8 +12,7 @@ package utils.color
 	 * <li><code>l</code> on 0 - 255 scale.</li>
 	 * <li><code>s</code> on 0 - 1 scale.</li></ul>
 	 */
-	public function RGBtoHSL(red:Number, green:Number, blue:Number):Object
-	{
+	public function RGBtoHSL(red:Number, green:Number, blue:Number):Object {
 		var min:Number, max:Number, delta:Number, l:Number, s:Number, h:Number = 0;
 
 		max = Math.max(red, Math.max(green, blue));
@@ -20,21 +21,18 @@ package utils.color
 		//l = (min + max) / 2;
 		l = (min + max) * 0.5;
 		// L
-		if (l == 0)
-		{
+		if(l == 0) {
 			return { h: h, l: 0, s: 1 };
 		}
 
 		//delta = (max - min) / 2;
 		delta = (max - min) * 0.5;
 
-		if (l < 0.5)
-		{
+		if(l < 0.5) {
 			// S
 			s = delta / l;
 		}
-		else
-		{
+		else {
 			s = delta / (1 - l);
 		}
 		// H

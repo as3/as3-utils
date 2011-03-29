@@ -3,7 +3,7 @@ package utils.string {
 
 
 	/**
-	 * Returns everything after the last occurence of the provided character in value.
+	 * Returns everything after the last occurrence of the provided character in value.
 	 * @param value Input String
 	 * @param ch Character or sub-string
 	 * @return Output String
