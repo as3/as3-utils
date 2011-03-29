@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<project 
-	name="as3-utils" 
-	basedir="."
-	default="package">
-	
+<project
+		name="as3-utils"
+		basedir="."
+		default="package">
+
 	<!--
 		as3-utils
 		
@@ -12,7 +12,7 @@
 		
 		@author drewbourne
 	-->
-	
+
 	<!-- properties -->
 	<property environment="env" />
 	<property file="build.properties" />
@@ -25,7 +25,7 @@
 	<property name="build.pmd.loc" location="${build.loc}/pmd" />
 	<property name="build.flexunit.loc" location="${build.loc}/flexunit" />
 
-	<!-- paths: enerated -->
+	<!-- paths: enumerated -->
 	<property name="dist.loc" location="${basedir}/target" />
 	<property name="bin.loc" location="${dist.loc}/bin" />
 	<property name="doc.loc" location="${dist.loc}/doc" />
@@ -35,39 +35,39 @@
 	<!-- Flex SDK -->
 	<property name="FLEX_HOME" location="${env.FLEX_HOME}" />
 
-	<!-- taskdefs -->
-	<taskdef resource="flexTasks.tasks" 
-		classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
-	
+	<!-- task definitions -->
+	<taskdef resource="flexTasks.tasks"
+	         classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
 	<!-- targets -->
 	<target
-		name="clean"
-		description="Removes generated artifacts and directories">
-		
+			name="clean"
+			description="Removes generated artifacts and directories">
+
 		<delete dir="${dist.loc}" />
-		
+
 	</target>
-	
-	<target 
-		name="initialize"
-		description="Creates generated directories ">
-		
+
+	<target
+			name="initialize"
+			description="Creates generated directories ">
+
 		<mkdir dir="${dist.loc}" />
 		<mkdir dir="${bin.loc}" />
 		<mkdir dir="${doc.loc}" />
 		<mkdir dir="${report.loc}" />
 		<mkdir dir="${report.flexunit.loc}" />
-		
+
 	</target>
-	
-	<target 
-		name="compile-check-if-required"
-		description="Checks if a compile is required"
-		depends="initialize">
-		
-		<uptodate 
-			property="compile.not-required"
-			targetfile="${bin.loc}/${build.artifact}.swc">
+
+	<target
+			name="compile-check-if-required"
+			description="Checks if a compile is required"
+			depends="initialize">
+
+		<uptodate
+				property="compile.not-required"
+				targetfile="${bin.loc}/${build.artifact}.swc">
 			<srcresources>
 				<fileset dir="${src.loc}">
 					<include name="**/*.as" />
@@ -78,45 +78,45 @@
 				</fileset>
 			</srcresources>
 		</uptodate>
-		
+
 	</target>
-	
-	<target 
-		name="compile" 
-		description="Compiles the library"
-		depends="initialize, compile-check-if-required"
-		unless="compile.not-required">
-		
+
+	<target
+			name="compile"
+			description="Compiles the library"
+			depends="initialize, compile-check-if-required"
+			unless="compile.not-required">
+
 		<compc output="${bin.loc}/${build.artifact}.swc">
 			<source-path path-element="${src.loc}" />
-			
+
 			<include-sources dir="${src.loc}">
 				<include name="**/*.as" />
 				<include name="**/*.mxml" />
 			</include-sources>
-			
+
 			<library-path dir="${lib.loc}" append="true">
 				<include name="*.swc" />
 			</library-path>
-			
+
 			<compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
 			<compiler.headless-server>true</compiler.headless-server>
 		</compc>
-		
+
 	</target>
 
-	<target name="test" 
-		description="Run the test suite" 
-		depends="initialize">
-		
-		<taskdef resource="flexUnitTasks.tasks" 
-			classpath="${build.flexunit.loc}/flexUnitTasks-${flexunit.version}.jar" />
-		
+	<target name="test"
+	        description="Run the test suite"
+	        depends="initialize">
+
+		<taskdef resource="flexUnitTasks.tasks"
+		         classpath="${build.flexunit.loc}/flexUnitTasks-${flexunit.version}.jar" />
+
 		<!-- Compile Test -->
-		<mxmlc 
-			file="${test.loc}/${test.runner}.${test.runner.ext}" 
-			output="${bin.loc}/${test.runner}.swf">
-			
+		<mxmlc
+				file="${test.loc}/${test.runner}.${test.runner.ext}"
+				output="${bin.loc}/${test.runner}.swf">
+
 			<library-path dir="${bin.loc}" append="true">
 				<include name="${build.artifact}.swc" />
 			</library-path>
@@ -130,20 +130,20 @@
 		</mxmlc>
 
 		<!-- Execute Tests -->
-		<flexunit 
-			swf="${bin.loc}/${test.runner}.swf" 
-			toDir="${report.flexunit.loc}" 
-			headless="true"
-			haltonfailure="false" 
-			verbose="true" 
-			localTrusted="true" />
-		
+		<flexunit
+				swf="${bin.loc}/${test.runner}.swf"
+				toDir="${report.flexunit.loc}"
+				headless="true"
+				haltonfailure="false"
+				verbose="true"
+				localTrusted="true" />
+
 	</target>
 
-	<target name="report" 
-		description="Generates test reports from FlexUnit, FlexPMD, FlexCPD, FlexMetrics" 
-		depends="test">
-		
+	<target name="report"
+	        description="Generates test reports from FlexUnit, FlexPMD, FlexCPD, FlexMetrics"
+	        depends="test">
+
 		<!-- Generate readable report for FlexUnit -->
 		<junitreport todir="${report.flexunit.loc}">
 			<fileset dir="${report.flexunit.loc}">
@@ -179,7 +179,8 @@
 			</classpath>
 		</taskdef>
 
-		<taskdef name="metrics" classname="com.adobe.ac.pmd.metrics.ant.FlexMetricsAntTask" classpath="${build.pmd.loc}/flex-pmd-metrics-ant-task-${flexpmd.version}.jar">
+		<taskdef name="metrics" classname="com.adobe.ac.pmd.metrics.ant.FlexMetricsAntTask"
+		         classpath="${build.pmd.loc}/flex-pmd-metrics-ant-task-${flexpmd.version}.jar">
 			<classpath>
 				<path refid="flexpmd.base" />
 				<pathelement location="${build.pmd.loc}/commons-lang-2.4.jar" />
@@ -200,13 +201,13 @@
 		</cpd>
 
 		<metrics sourcedirectory="${src.loc}" outputfile="${report.loc}/javancss.xml" />
-		
+
 	</target>
-	
+
 	<target name="doc"
-		description="Generate ASDoc for ${ant.project.name}"
-		depends="initialize">
-		
+	        description="Generate ASDoc for ${ant.project.name}"
+	        depends="initialize">
+
 		<!-- Generate asdocs -->
 		<java jar="${FLEX_HOME}/lib/asdoc.jar" fork="true" failonerror="true">
 			<arg line="+flexlib '${FLEX_HOME}/frameworks'" />
@@ -216,12 +217,12 @@
 			<arg line="-main-title '${project.name} API Documentation'" />
 			<arg line="-window-title '${project.name} API Documentation'" />
 		</java>
-		
+
 	</target>
 
-	<target name="package" 
-		description="Package ${ant.project.name} into a zip" 
-		depends="compile, test, report, doc">
+	<target name="package"
+	        description="Package ${ant.project.name} into a zip"
+	        depends="compile, test, report, doc">
 
 		<!-- Create distribution for binaries with docs -->
 		<zip destfile="${dist.loc}/${build.artifact}.zip">
@@ -230,7 +231,7 @@
 			</zipfileset>
 			<zipfileset dir="${doc.loc}" prefix="doc" />
 		</zip>
-		
+
 	</target>
-	
+
 </project>
