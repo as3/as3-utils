@@ -4,7 +4,7 @@ package utils.location {
 
 
 	/**
-	 * Detects if MovieClip's embed location matches passed domain.
+	 * Detects if MovieClip embed location matches passed domain.
 	 * Check for domain:
 	 *      <pre>
 	 *          trace(isDomain(_root, "google.com"));

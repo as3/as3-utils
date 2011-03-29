@@ -1,10 +1,11 @@
-package utils.date
-{
+package utils.date {
+
+
+
 	/**
-	 * Converts a date into just befor midnight.
+	 * Converts a date into just before midnight.
 	 */
-	public function makeNight(d:Date):Date
-	{
+	public function makeNight(d:Date):Date {
 		var d:Date = new Date(d.time);
 		d.hours = 23;
 		d.minutes = 59;

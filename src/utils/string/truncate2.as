@@ -5,7 +5,7 @@ package utils.string {
 	/**
 	 * Returns a String truncated to a specified length with optional suffix.
 	 * @param value Input String
-	 * @param length Length the String should be shortend to
+	 * @param length Length the String should be shortened to
 	 * @param suffix (optional, default="...") String to append to the end of the truncated String
 	 * @returns String String truncated to a specified length with optional suffix
 	 */
