@@ -5,7 +5,7 @@ package utils.event
 	public function addTargetEventListener(target:IEventDispatcher, 
 										   type:String, 
 										   listener:Function, 
-										   useWeakReference:Boolean = true, 
+										   useWeakReference:Boolean = false, 
 										   useCapture:Boolean = false, 
 										   priority:int = 0):void
 	{
