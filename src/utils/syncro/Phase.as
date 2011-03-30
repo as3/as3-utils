@@ -1,5 +1,8 @@
 package utils.syncro
 {
+	import flash.events.Event;
+	import flash.events.IEventDispatcher;
+
 	internal dynamic class Phase extends Array
 	{
 		public function Phase(name:String, priority:int, ascending:Boolean)
@@ -31,7 +34,13 @@ package utils.syncro
 				reverse();
 			
 			var obj:Object;
+			
+			// Protective clone so items added during 
+			// validation don't cause an infinite loop.
 			var protect:Array = concat();
+			
+			// Clear the list so items can be added during validation. 
+			length = 0;
 			var n:int = protect.length;
 			
 			while(--n >= 0)
@@ -40,6 +49,8 @@ package utils.syncro
 				
 				if(name in obj)
 					obj[name]();
+				else if(obj is IEventDispatcher)
+					IEventDispatcher(obj).dispatchEvent(new Event(name));
 			}
 		}
 	}
