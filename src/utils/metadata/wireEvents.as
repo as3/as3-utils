@@ -12,8 +12,11 @@ package utils.metadata
 		var type:String;
 		for each(var m:XML in methods)
 		{
-			type = m.arg.@value.toString();
-			addTargetEventListener(target, type, getSafeEventHandler(target[m.name()]), false);
+			for each(var meta:XML in m.metadata.(@name=="Event"))
+			{
+				type = meta.arg.@value.toString();
+				addTargetEventListener(target, type, getSafeEventHandler(target[m.@name]), false);
+			}
 		}
 	}
 }

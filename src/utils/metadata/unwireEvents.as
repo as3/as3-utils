@@ -12,19 +12,20 @@ package utils.metadata
 	{
 		var methods:XMLList = describeMethods(target, 'Event');
 		var type:String;
-		var func:Function;
+		var func:*;
 		var dict:Dictionary = new Dictionary(false);
 		
 		for each(var m:XML in methods)
 		{
-			type = m.arg.@value.toString();
-			dict[func = target[m.name()]] = true;
-			removeTargetEventListener(target, type, getSafeEventHandler(func));
+			for each(var meta:XML in m.metadata.(@name=="Event"))
+			{
+				type = meta.arg.@value.toString();
+				dict[func = target[m.name()]] = true;
+				removeTargetEventListener(target, type, getSafeEventHandler(func));
+			}
 		}
 		
-		for(var myFunc:* in dict)
-			trashSafeEventHandler(myFunc);
-		
-		dict = null;
+		for(func in dict)
+			trashSafeEventHandler(func);
 	}
 }
