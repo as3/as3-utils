@@ -3,7 +3,7 @@ package utils.geom {
 
 
 	/**
-	 * Simplifys the supplied angle to its simpliest representation.
+	 * Simplifies the supplied angle to its simplest representation.
 	 * Example code:
 	 *      <pre>
 	 *          var simpAngle:Number = simplifyAngle(725); // returns 5
