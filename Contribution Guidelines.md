@@ -172,6 +172,8 @@ __ADMINS:__
 
 1. Remember to run the test suite before merging code into master.
 
+1. You can reformat the incoming code using the `res/flex-formatter.properties` file. (Optional)
+
 1. Big changes can/should first be merged into a separate integration branch at your discretion.
 
 
