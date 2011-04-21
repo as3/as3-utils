@@ -16,8 +16,9 @@ package utils.number {
 	 * 
 	 * @author Unknown. flash.utils.Endian tweak added by Mims Wright
 	 */
-	public function toHex(n:int, endianness:* = Endian.LITTLE_ENDIAN):String {
+	public function toHex(n:int, endianness:* = null):String {
 		var bigEndian:Boolean;
+		if (endianness == null) { endianness = Endian.LITTLE_ENDIAN; }
 		if (endianness is Boolean) { 
 			bigEndian = Boolean(endianness);
 		} else {
