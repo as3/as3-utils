@@ -20,7 +20,11 @@ package utils.date.calendar
 		[Test]
 		public function today_should_be():void
 		{
-			assertEquals(new Calendar().today.toString(), new Calendar().now.toString());
+			var today:Date = new Calendar().today;
+			var now:Date = new Date();
+			assertEquals(today.year, now.year);
+			assertEquals(today.month, now.month);
+			assertEquals(today.date, now.date);
 		}
 	}
 }
