@@ -8,7 +8,9 @@ package utils.geom
 {
 import flash.geom.Point;
 
+import org.flexunit.asserts.assertEquals;
 import org.flexunit.asserts.assertTrue;
+
 import utils.geom.cartesianToPolarCoordinates;
 import utils.geom.polarToCartesianCoordinates;
 
@@ -27,7 +29,8 @@ public class PolarToCartesianCoordinatesTest
 
            var cartesianPoint:Point = polarToCartesianCoordinates(5, 53.13010235415598);
 
-           assertTrue(cartesianPoint.x == 3, cartesianPoint.y == 4);
+           assertEquals(3, cartesianPoint.x); 
+		   assertEquals(4, cartesianPoint.y);
 
         }
 
