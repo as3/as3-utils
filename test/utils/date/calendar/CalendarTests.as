@@ -22,7 +22,7 @@ package utils.date.calendar
 		{
 			var today:Date = new Calendar().today;
 			var now:Date = new Date();
-			assertEquals(today.year, now.year);
+			assertEquals(today.fullYear, now.fullYear);
 			assertEquals(today.month, now.month);
 			assertEquals(today.date, now.date);
 		}
