@@ -8,81 +8,109 @@ package utils.string
 	 * @playerversion Flash 10.0
 	 * @author Mims H. Wright
 	 */
-	public function numberToString(n:uint):String {
-		var str:String;                             		// str will hold the final outcome
+	public function numberToString(n:Number):String {
 		var output:Vector.<String> = new Vector.<String>();	// output will temporarily hold the strings that make up str
-		var digits:Vector.<String> = new Vector.<String>();  		// digit is an array of digits based on the number n
-		var negative:Boolean = false;                 		// used for removing minus sign.
+		var isNegative:Boolean = false;                 		// used for removing minus sign.
+		var integers:Number;
+		var decimals:Number;
 		
+		// check for NaN 
+		if (isNaN(n)) { return N.NAN; }
 		// check for zero
-		if (n == 0) { return N._0; } // todo: tidy
+		if (n == 0) { return N._0; }
 		// check for negatives
 		if (n < 0) { 
-			negative = true;
+			isNegative = true;
 			n *= -1;
 		}
 		
-		digits = Vector.<String>(n.toString().split(""));
 		
-		// reverse the array so that each order of ten can be represented by 
-		// an element of the periods array.
-		digits.reverse();
-		var max:Number = digits.length;
-		
-		// for each digit in n
-		var magnitude:int = 0;
-		for (;magnitude < max; magnitude+=1) {
-			var pos:int = magnitude;
+		// solve for decimals
+		var decimalPointIndex:int = n.toString().indexOf(".");
+		if (decimalPointIndex > -1) {
+			digits = Vector.<String> (n.toString().substr(decimalPointIndex + 1).split(""));
+			digits.reverse();
 			
-			var digitInt:int = int(digits[pos]);
-			var periodForThisMagnitude:Vector.<String> = N.periods[magnitude];
-//			var textForThisDigit:String = periodForThisMagnitude[digitInt]
-			// push the text equivelant to the output
-//			output.push(textForThisDigit);
-			output.push(N.periods[magnitude][digits[pos]]);
-			
-			// anytime ten is written it's a special case.
-			// the second magnitude and every 3 magnitudes after are special
-			var s:Number = magnitude % 3; 
-			
-			// if this is a special case and output for special (tens) place is ten
-			if ((s == 1) && (output[magnitude] == N.periods[1][1])) {
-				// delete the value for the ones place
-				output[magnitude] = "";
-				// choose a new value for tens using a special case
-				var newTxt:String
-				switch (int(digits[magnitude-1])) {
-					case (0) : newTxt = N._10;	break;
-					case (1) : newTxt = N._11;	break;
-					case (2) : newTxt = N._12;	break;
-					case (3) : newTxt = N._13;	break;
-					case (4) : newTxt = N._14;	break;
-					case (5) : newTxt = N._15;	break;
-					case (6) : newTxt = N._16;	break;
-					case (7) : newTxt = N._17;	break;
-					case (8) : newTxt = N._18;	break;
-					case (9) : newTxt = N._19;	break;
+			var i:int = 0;
+			var digit:int;
+			for (; i < digits.length; i += 1) {
+				digit = int(digits[i]);
+				if (digit == 0) {
+					output.push(N._0 + " ");
+				} else {
+					output.push(N._1to9[digit]);
 				}
-				// replace the word 'ten' with the new text.
-				var spc:Number = output[magnitude-1].indexOf(" ");
-				output[magnitude-1] = newTxt + output[magnitude-1].substr(spc + 1);
 			}
-		}    
+			output.push(N.decimal);
+		}
+
+		// solve for integers
+		integers = Math.floor(n);
+		var period:int = 0;
+		var digits:Vector.<String> = Vector.<String>(integers.toString().split("")).reverse();
+		var hundreds:int;
+		var tens:int;
+		var ones:int;
+		var next3:String;
+		while (digits.length > 0) {
+			// grab the next three digits and analyze them.
+			next3 = digits.slice(0,3).join("");
+			
+			if (next3 != "000") {
+				output.push(N.periods[period]);
+			}
+			
+			ones = int(digits[0]); 
+			
+			try { tens = int(digits[1]); }
+			catch (e:RangeError) { tens = NaN;}
+			
+			try { hundreds = int(digits[2]); }
+			catch (e:RangeError) { hundreds = NaN; }
+			
+			if (!isNaN(tens)) {
+				if (tens == 1) {
+					output.push(N._10to19[ones]);
+				} else {
+					output.push(N._1to9[ones]);
+					output.push(N._10to90[tens]);
+				}
+			} else {
+				output.push(N._1to9[ones]);
+			}
+			if (!isNaN(hundreds)) {
+				output.push(N._100to900[hundreds]);
+			}
+			
+			// advance the period counter
+			period++;
+			// remove those three digits from the array of digits
+			digits.splice(0, 3);
+		}
 		
-		if (negative == true) { 
-			output.push("negative ");
+		
+		if (isNegative == true) { 
+			output.push(N.negative);
 			n *= -1;
 		}
 		
 		// reverse the output so that it will look correct
 		output.reverse();
 		// save the output to the string
-		str = output.join("");
+		var str:String = output.join("");
+		// remove any trailing spaces.
+		if (str.charAt(str.length-1) == " ") { 
+			str = str.substr(0, str.length-1);
+		}
 		return str;
 	}
 }
 
 internal class N {
+	public static const NAN:String = "not a number";
+	public static const decimal:String = "point ";
+	public static const negative:String = "negative ";
+	
 	public static const _0:String = "zero";
 	public static const _1:String = "one ";
 	public static const _2:String = "two ";
@@ -117,41 +145,27 @@ internal class N {
 	public static const _1000000000:String = "billion ";
 	public static const _1000000000000:String = "trillion ";
 	public static const _1000000000000000:String = "quadrillion ";
+	public static const _1000000000000000000:String = "quintillion ";
+	public static const _1000000000000000000000:String = "sextillion ";
+	public static const _1000000000000000000000000:String = "septillion ";
+	public static const _1000000000000000000000000000:String = "octillion ";
 	
 	
 	public static const _1to9:Vector.<String> = Vector.<String>(["",_1,_2,_3,_4,_5,_6,_7,_8,_9]);
+	public static const _10to19:Vector.<String> = Vector.<String>([_10,_11,_12,_13,_14,_15,_16,_17,_18,_19]);
 	public static const _10to90:Vector.<String> = Vector.<String>(["",_10,_20,_30,_40,_50,_60,_70,_80,_90]);
 	public static const _100to900:Vector.<String> = Vector.<String>(["",_1 + _100, _2 + _100, _3 + _100, _4 + _100, _5 + _100, _6 + _100, _7 + _100, _8 + _100, _9 + _100]);
 	
-	/**
-	 *    Period generator. Creates arrays of periods of numeric text equivelants. ie. 1thousand, 10thousand, 100thousand
-	 *
-	 *    @param counter - the name of the period (ie 'billion')
-	 *    @returns array - an array of three arrays that represent the period, to be appended to the master period
-	 */
-	private static function createPeriod (counter:String):Vector.<Vector.<String>> {
-		var period:Vector.<Vector.<String>> = Vector.<Vector.<String>> ([
-			Vector.<String>(["",_1 + counter, _2 + counter, _3 + counter, _4 + counter, _5 + counter, _6 + counter, _7 + counter, _8 + counter, _9 + counter]),
-			_10to90,
-			_100to900
-		]);
-		return period;
-	}
-	
-	// the text equivelants of all the numbers as a multi-dimensional array
-	public static function get periods():Vector.<Vector.<String>> {
-		if (_periods == null) {
-			_periods = new Vector.<Vector.<String>>();
-			_periods = _periods.concat(
-				createPeriod(_1000000000000000), // quadril
-				createPeriod(_1000000000000), // tril
-				createPeriod(_1000000000), // bil
-				createPeriod(_1000000), // mil
-				createPeriod(_1000),
-				createPeriod("")
-			);
-		}
-		return _periods;
-	}
-	private static var _periods:Vector.<Vector.<String>>;
+	public static const periods:Vector.<String> = Vector.<String>(
+		["",
+		_1000, 
+		_1000000, 
+		_1000000000,
+		_1000000000000,
+		_1000000000000000,
+		_1000000000000000000,
+		_1000000000000000000000,
+		_1000000000000000000000000,
+		_1000000000000000000000000000
+	]);
 } 
