@@ -1,6 +1,6 @@
 package utils.date {
 	import utils.conversion.minutesToHours;
-	import utils.number.addLeadingZero;
+	import utils.number.addLeadingZeroes;
 
 
 
@@ -13,6 +13,6 @@ package utils.date {
 	public function getFormattedDifferenceFromUTC(date:Date, separator:String = ""):String {
 		var pre:String = (-date.getTimezoneOffset() < 0) ? "-" : "+";
 
-		return pre + addLeadingZero(Math.floor(minutesToHours(date.getTimezoneOffset()))) + separator + addLeadingZero(date.getTimezoneOffset() % 60);
+		return pre + addLeadingZeroes(Math.floor(minutesToHours(date.getTimezoneOffset()))) + separator + addLeadingZeroes(date.getTimezoneOffset() % 60);
 	}
 }

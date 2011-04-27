@@ -1,8 +1,9 @@
 package utils.display
 {
 	import flash.display.DisplayObject;
+	
+	import utils.number.clamp;
 
-	import utils.number.confine;
 
 	/**
 	 * Sends the DisplayObject to the back of the display list. The <code>forward</code> parameter can be used to bring the DisplayObject forward a few levels from the back.
@@ -15,7 +16,7 @@ package utils.display
 		if (!object.parent)
 			return -1;
 
-		var index:int = confine(forward, 0, object.parent.numChildren - 1);
+		var index:int = clamp(forward, 0, object.parent.numChildren - 1);
 
 		object.parent.setChildIndex(object, index);
 

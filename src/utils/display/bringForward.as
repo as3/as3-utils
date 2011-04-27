@@ -1,8 +1,8 @@
 package utils.display
 {
 	import flash.display.DisplayObject;
-
-	import utils.number.confine;
+	
+	import utils.number.clamp;
 
 	/**
 	 * Brings the DisplayObject forward in the display list. The <code>steps</code> parameter can be used to jump more than one level.
@@ -16,7 +16,7 @@ package utils.display
 			return -1;
 
 		var index:int = object.parent.getChildIndex(object) + steps;
-		index = confine(index, 0, object.parent.numChildren - 1);
+		index = clamp(index, 0, object.parent.numChildren - 1);
 
 		object.parent.setChildIndex(object, index);
 

@@ -1,6 +1,6 @@
 package utils.date {
 	import utils.conversion.minutesToSeconds;
-	import utils.number.addLeadingZero;
+	import utils.number.addLeadingZeroes;
 	import utils.number.format;
 	import utils.number.getOrdinalSuffix;
 
@@ -214,7 +214,7 @@ package utils.date {
 				switch(c) {
 					case "d" :
 						// Day of the month, 2 digits with leading zeros
-						out += addLeadingZero(dateToFormat.getDate());
+						out += addLeadingZeroes(dateToFormat.getDate());
 						break;
 
 					case "D" :
@@ -251,12 +251,12 @@ package utils.date {
 
 					case "z" :
 						// The day of the year (starting from 0)
-						out += String(addLeadingZero(getDayOfTheYear(dateToFormat)));
+						out += String(addLeadingZeroes(getDayOfTheYear(dateToFormat)));
 						break;
 
 					case "W" :
 						// ISO-8601 week number of year, weeks starting on Monday
-						out += String(addLeadingZero(getWeekOfTheYear(dateToFormat)));
+						out += String(addLeadingZeroes(getWeekOfTheYear(dateToFormat)));
 						break;
 
 					case "F" :
@@ -266,7 +266,7 @@ package utils.date {
 
 					case "m" :
 						// Numeric representation of a month, with leading zeros
-						out += addLeadingZero(dateToFormat.getMonth() + 1);
+						out += addLeadingZeroes(dateToFormat.getMonth() + 1);
 						break;
 
 					case "M" :
@@ -339,22 +339,22 @@ package utils.date {
 						} else if(t > 12) {
 							t -= 12;
 						}
-						out += addLeadingZero(t);
+						out += addLeadingZeroes(t);
 						break;
 
 					case "H" :
 						// 24-hour format of an hour with leading zeros
-						out += addLeadingZero(dateToFormat.getHours());
+						out += addLeadingZeroes(dateToFormat.getHours());
 						break;
 
 					case "i" :
 						// Minutes with leading zeros
-						out += addLeadingZero(dateToFormat.getMinutes());
+						out += addLeadingZeroes(dateToFormat.getMinutes());
 						break;
 
 					case "s" :
 						// Seconds, with leading zeros
-						out += addLeadingZero(dateToFormat.getSeconds());
+						out += addLeadingZeroes(dateToFormat.getSeconds());
 						break;
 
 					case "I" :
@@ -384,12 +384,12 @@ package utils.date {
 
 					case "c" :
 						// ISO 8601 date
-						out += dateToFormat.getFullYear() + "-" + addLeadingZero(dateToFormat.getMonth() + 1) + "-" + addLeadingZero(dateToFormat.getDate()) + "T" + addLeadingZero(dateToFormat.getHours()) + ":" + addLeadingZero(dateToFormat.getMinutes()) + ":" + addLeadingZero(dateToFormat.getSeconds()) + getFormattedDifferenceFromUTC(dateToFormat, ":");
+						out += dateToFormat.getFullYear() + "-" + addLeadingZeroes(dateToFormat.getMonth() + 1) + "-" + addLeadingZeroes(dateToFormat.getDate()) + "T" + addLeadingZeroes(dateToFormat.getHours()) + ":" + addLeadingZeroes(dateToFormat.getMinutes()) + ":" + addLeadingZeroes(dateToFormat.getSeconds()) + getFormattedDifferenceFromUTC(dateToFormat, ":");
 						break;
 
 					case "r" :
 						// RFC 2822 formatted date
-						out += getDayAbbrName(dateToFormat.getDay()) + ", " + dateToFormat.getDate() + " " + getMonthAbbrName(dateToFormat.getMonth()) + " " + dateToFormat.getFullYear() + " " + addLeadingZero(dateToFormat.getHours()) + ":" + addLeadingZero(dateToFormat.getMinutes()) + ":" + addLeadingZero(dateToFormat.getSeconds()) + " " + getFormattedDifferenceFromUTC(dateToFormat);
+						out += getDayAbbrName(dateToFormat.getDay()) + ", " + dateToFormat.getDate() + " " + getMonthAbbrName(dateToFormat.getMonth()) + " " + dateToFormat.getFullYear() + " " + addLeadingZeroes(dateToFormat.getHours()) + ":" + addLeadingZeroes(dateToFormat.getMinutes()) + ":" + addLeadingZeroes(dateToFormat.getSeconds()) + " " + getFormattedDifferenceFromUTC(dateToFormat);
 						break;
 
 					case "U" :

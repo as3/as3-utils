@@ -9,13 +9,13 @@ package utils.geom {
 	 *          var simpAngle:Number = simplifyAngle(725); // returns 5
 	 *          var simpAngle2:Number = simplifyAngle(-725); // returns -5
 	 *      </pre>
-	 * @param value Angle to simplify
+	 * @param value Angle to simplify in degrees
 	 * @return Supplied angle simplified
 	 * @author Vaclav Vancura (<a href="http://vancura.org">vancura.org</a>, <a href="http://twitter.com/vancura">@vancura</a>)
 	 */
-	public function simplifyAngle(value:Number):Number {
-		var _rotations:Number = Math.floor(value / 360);
+	public function simplifyAngle(angle:Number):Number {
+		var _rotations:Number = Math.floor(angle / 360);
 
-		return (value >= 0) ? value - (360 * _rotations) : value + (360 * _rotations);
+		return (angle >= 0) ? angle - (360 * _rotations) : angle + (360 * _rotations);
 	}
 }

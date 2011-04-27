@@ -1,7 +1,7 @@
 package utils.load
 {
 	import utils.math.Percent;
-	import utils.number.constrain;
+	import utils.number.clamp;
 
 	/**
 	   Calculates the percent the video has buffered.
@@ -18,6 +18,6 @@ package utils.load
 		var totalWait:Number = bytesTotal / (bytesLoaded / (elapsedTime - startTime)) - lengthInMilliseconds;
 		var millisecondsRemaining:uint = calculateMillisecondsUntilBuffered(bytesLoaded, bytesTotal, startTime, elapsedTime, lengthInMilliseconds);
 
-		return (totalWait == Number.POSITIVE_INFINITY) ? new Percent(0) : new Percent(constrain(1 - millisecondsRemaining / totalWait, 0, 1));
+		return (totalWait == Number.POSITIVE_INFINITY) ? new Percent(0) : new Percent(clamp(1 - millisecondsRemaining / totalWait, 0, 1));
 	}
 }

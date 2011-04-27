@@ -6,19 +6,25 @@
 package utils.date.calendar
 {
 	import org.flexunit.asserts.assertEquals;
+	
+	import utils.date.Calendar;
 
 	public class CalendarTests
 	{
 		[Test]
 		public function now_should_be_the_current_time():void
 		{
-			assertEquals(now.toString(), new Date().toString());
+			assertEquals(new Calendar().now.toString(), new Date().toString());
 		}
 		
 		[Test]
 		public function today_should_be():void
 		{
-			assertEquals(today.toString(), now.toString());
+			var today:Date = new Calendar().today;
+			var now:Date = new Date();
+			assertEquals(today.fullYear, now.fullYear);
+			assertEquals(today.month, now.month);
+			assertEquals(today.date, now.date);
 		}
 	}
 }

@@ -1,7 +1,7 @@
-package utils.number {
-
-
-
+package deprecated
+{
+	[Deprecated(replacement="utils.number.clamp")]
+	
 	/**
 	 * Restricts the <code>value</code> to the <code>min</code> and <code>max</code>
 	 * @param value the number to restrict
