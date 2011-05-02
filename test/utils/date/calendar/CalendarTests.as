@@ -7,18 +7,22 @@ package utils.date.calendar
 {
 	import org.flexunit.asserts.assertEquals;
 
-	public class CalendarTests
+import org.hamcrest.assertThat;
+
+import org.hamcrest.object.equalTo;
+
+import utils.date.Calendar;
+
+public class CalendarTests
 	{
 		[Test]
 		public function now_should_be_the_current_time():void
 		{
-			assertEquals(now.toString(), new Date().toString());
+            var calendar:Calendar = new Calendar();
+
+			assertThat(calendar.now.toString(), equalTo(new Date().toString()));
 		}
 		
-		[Test]
-		public function today_should_be():void
-		{
-			assertEquals(today.toString(), now.toString());
-		}
+
 	}
 }

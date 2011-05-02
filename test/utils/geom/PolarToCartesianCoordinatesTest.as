@@ -9,27 +9,26 @@ package utils.geom
 import flash.geom.Point;
 
 import org.flexunit.asserts.assertTrue;
+import org.hamcrest.assertThat;
+
+import org.hamcrest.object.equalTo;
+
 import utils.geom.cartesianToPolarCoordinates;
 import utils.geom.polarToCartesianCoordinates;
 
 public class PolarToCartesianCoordinatesTest
+{
+
+    [Test]
+    public function PolarToCartesianCoordinatesReturnsProperCoords():void
     {
+       //R is 12, theta is 195 degrees
+       var cartesianPoint:Point = polarToCartesianCoordinates(12, 195);
 
-		[Before]
-		public function setup():void
-		{
+       assertThat(cartesianPoint.x, equalTo(-11.59110991546882));
+       assertThat(cartesianPoint.y, equalTo(-3.1058285412302444));
 
-		}
+    }
 
-		[Test]
-		public function PolarToCartesianCoordinatesReturnsProperCoords():void
-		{
-
-           var cartesianPoint:Point = polarToCartesianCoordinates(5, 53.13010235415598);
-
-           assertTrue(cartesianPoint.x == 3, cartesianPoint.y == 4);
-
-        }
-
-	}
+}
 }
