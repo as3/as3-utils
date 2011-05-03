@@ -5,7 +5,6 @@
  */
 package utils.date.calendar
 {
-	import org.flexunit.asserts.assertEquals;
 
 import org.hamcrest.assertThat;
 
