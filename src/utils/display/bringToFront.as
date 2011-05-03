@@ -2,7 +2,7 @@ package utils.display
 {
 	import flash.display.DisplayObject;
 
-	import utils.number.confine;
+	import utils.number.clamp
 
 	/**
 	 * Brings the DisplayObject to the front of the display list. The <code>back</code> parameter can be used to pull the DisplayObject back a few levels from the front.
@@ -16,7 +16,7 @@ package utils.display
 			return -1;
 
 		var index:int = object.parent.numChildren - (back + 1);
-		index = confine(index, 0, object.parent.numChildren - 1);
+		index = clamp(index, 0, object.parent.numChildren - 1);
 
 		object.parent.setChildIndex(object, index);
 

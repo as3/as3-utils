@@ -1,5 +1,7 @@
-package utils.number
+package deprecated
 {
+	[Deprecated(replacement="utils.number.clamp")]
+	
 	/**
 	   Determines if value falls within a range; if not it is snapped to the nearest range value.
 

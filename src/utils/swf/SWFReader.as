@@ -11,6 +11,8 @@ package utils.swf
 	 * information from the SWF file header.  Some of
 	 * this information is inaccessible to ActionScript
 	 * otherwise.
+	 * 
+	 * @author Trevor McCauley - www.senocular.com
 	 */
 	public class SWFReader
 	{
