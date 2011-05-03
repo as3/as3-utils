@@ -11,7 +11,7 @@ import org.hamcrest.object.equalTo;
 public class isValidXMLTest {
 
     [Test]
-    public function validXMLShouldReturnTrue() {
+    public function validXMLShouldReturnTrue() : void {
 
         var s:String = "<goodxml></goodxml>";
 
@@ -20,7 +20,7 @@ public class isValidXMLTest {
     }
 
     [Test]
-    public function invalidXMLShouldReturnFalse() {
+    public function invalidXMLShouldReturnFalse() : void {
 
 
         var s:String = "<badXml></badXmL>";

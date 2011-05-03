@@ -11,7 +11,7 @@ import org.hamcrest.object.equalTo;
 public class GetNextSiblingTest {
 
     [Test]
-    public function requestedIndexShouldReturnNextNode() {
+    public function requestedIndexShouldReturnNextNode() : void {
 
         var x:XML =
                     <root>

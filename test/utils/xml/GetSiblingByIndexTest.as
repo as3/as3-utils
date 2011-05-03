@@ -11,7 +11,7 @@ import org.hamcrest.object.equalTo;
 public class GetSiblingByIndexTest {
 
     [Test]
-    public function requestedIndexShouldReturnProperNode() {
+    public function requestedIndexShouldReturnProperNode() : void {
 
         var x:XML =
                     <root>
