@@ -1,4 +1,4 @@
-package utils.location {
+package utils.capabilities {
 	import flash.display.DisplayObject;
 
 

@@ -7,7 +7,7 @@ package utils.display {
 	/**
 	 * trace() children of the DisplayObjectContainer.
 	 * @param container DisplayObjectContainer to get children of
-	 * @param indentLevel Indetnation level (default 0)
+	 * @param indentLevel Indentation level (default 0)
 	 * @author Vaclav Vancura (<a href="http://vancura.org">vancura.org</a>, <a href="http://twitter.com/vancura">@vancura</a>)
 	 */
 	public function traceChildren(container:DisplayObjectContainer, indentLevel:int = 0):void {
