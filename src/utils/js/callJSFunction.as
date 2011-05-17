@@ -11,8 +11,8 @@ package utils.js {
 	 * @param arg3 Argument 3
 	 * @param arg4 Argument 4
 	 * @throws Error if empty function name supplied
-	 * @throws Error if SecurityError occured
-	 * @throws Error if Error occured
+	 * @throws Error if SecurityError occurred
+	 * @throws Error if Error occurred
 	 * @author Vaclav Vancura (<a href="http://vancura.org">vancura.org</a>, <a href="http://twitter.com/vancura">@vancura</a>)
 	 */
 	public function callJSFunction(func:String, arg1:* = null, arg2:* = null, arg3:* = null, arg4:* = null):void {

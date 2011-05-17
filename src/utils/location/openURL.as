@@ -3,6 +3,8 @@ package utils.location {
 	import flash.net.URLRequest;
 	import flash.net.navigateToURL;
 
+	import utils.capabilities.isIDE;
+
 
 
 	/**

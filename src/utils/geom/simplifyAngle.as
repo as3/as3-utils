@@ -9,7 +9,7 @@ package utils.geom {
 	 *          var simpAngle:Number = simplifyAngle(725); // returns 5
 	 *          var simpAngle2:Number = simplifyAngle(-725); // returns -5
 	 *      </pre>
-	 * @param value Angle to simplify in degrees
+	 * @param angle Angle to simplify in degrees
 	 * @return Supplied angle simplified
 	 * @author Vaclav Vancura (<a href="http://vancura.org">vancura.org</a>, <a href="http://twitter.com/vancura">@vancura</a>)
 	 */

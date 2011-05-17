@@ -1,5 +1,5 @@
-package utils.number {
-
+package deprecated {
+	[Deprecated(replacement="utils.boolean.randomChance")]
 
 
 	/**
@@ -17,8 +17,7 @@ package utils.number {
 	 * @author Aaron Clinger
 	 * @author Shane McCartney
 	 * @author David Nelson
-	 */
-	public function randomBoolean(chance:Number = 0.5):Boolean {
+	 */ public function randomBoolean(chance:Number = 0.5):Boolean {
 		return(Math.random() < chance);
 	}
 }

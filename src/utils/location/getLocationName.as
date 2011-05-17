@@ -1,6 +1,8 @@
 package utils.location {
 	import flash.external.ExternalInterface;
 
+	import utils.capabilities.isStandAlone;
+
 
 
 	/**
@@ -34,7 +36,8 @@ package utils.location {
 					out = locationNames.BROWSER_IE;
 				} else if(browserAgent != null && browserAgent.indexOf("Opera") >= 0) {
 					out = locationNames.BROWSER_OPERA;
-				} else {
+				}
+				else {
 					out = locationNames.BROWSER_UNDEFINED;
 				}
 			}
