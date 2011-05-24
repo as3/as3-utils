@@ -4,7 +4,7 @@
  * Date: 5/3/11
  * Time: 5:32 PM
  */
-package validation {
+package utils.validation {
 import org.hamcrest.assertThat;
 
 import org.hamcrest.object.equalTo;
