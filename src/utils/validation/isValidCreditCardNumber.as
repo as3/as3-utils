@@ -27,10 +27,13 @@ package utils.validation
 				var nParity:Number = aNumbers.length % 2;
 
 				// Loop through the card numbers.
-				for (var i:Number = 0; i < aNumbers.length; i++)
+				for (var i:uint = 0; i < aNumbers.length; i++)
 				{
 					// Type cast each digit to a number.
-					aNumbers[i] = Number(aNumbers[i]);
+
+                    var num:uint = uint(aNumbers[i]);
+
+					aNumbers[i] = num;
 
 					// Compare the parity of the index to the parity of the card number length
 					// to determine how the value of the current index is handled.
