@@ -10,9 +10,6 @@ package utils.validation
 	 */
 	public function isUSAStateAbbreviation(state:String):Boolean
 	{
-		var states:Array =
-			new Array('ak', 'al', 'ar', 'az', 'ca', 'co', 'ct', 'dc', 'de', 'fl', 'ga', 'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma', 'md', 'me', 'mi', 'mn', 'mo', 'ms', 'mt', 'nb', 'nc',
-					  'nd', 'nh', 'nj', 'nm', 'nv', 'ny', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'va', 'vt', 'wa', 'wi', 'wv', 'wy');
-		return contains(states, state.toLowerCase()) == 1;
+		return contains(US_STATE_ABBREVIATIONS, state.toLowerCase()) == 1;
 	}
 }
