@@ -12,14 +12,12 @@ package utils.object {
 	 * @author David Nelson
 	 */
 	public function contains(obj:Object, member:Object):Boolean {
-		var out:Boolean;
-
 		for(var prop:String in obj) {
 			if(obj[prop] == member) {
-				out = true;
+				return true;
 			}
 		}
 
-		return out;
+		return false;
 	}
 }
