@@ -39,6 +39,7 @@ Fork the [as3-utils project](http://github.com/as3/as3-utils) on GitHub, see the
 - Drew Bourne [@drewbourne](http://twitter.com/drewbourne)
 - Joel Hooks [@jhooks](http://twitter.com/jhooks)
 - Mims H. Wright [@mimshwright](http://twitter.com/mimshwright)
+- Ian McLean [@ianmclean](http://twitter.com/ianmclean)
 - [You?](https://github.com/as3/as3-utils/blob/master/Contribution%20Guidelines.md)
 
 # Giving credit where credit is due
