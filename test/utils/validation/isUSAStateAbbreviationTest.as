@@ -18,7 +18,8 @@ public class isUSAStateAbbreviationTest {
         new Array('ak', 'al', 'ar', 'az', 'ca', 'co', 'ct', 'dc', 'de', 'fl', 'ga', 'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma', 'md', 'me', 'mi', 'mn', 'mo', 'ms', 'mt', 'nb', 'nc',
 					  'nd', 'nh', 'nj', 'nm', 'nv', 'ny', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'va', 'vt', 'wa', 'wi', 'wv', 'wy');
 
-//        assertThat(isUSAStateAbbreviation("DE"),equalTo())
+//        assertThat(isUSAStateAbbreviation("DE"),
+//			equalTo())
 
         fail("test remains to be implemented")
     }

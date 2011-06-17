@@ -84,6 +84,9 @@ package utils.date
 				case "6":
 					timezone = CENTRAL;//Central
 					break;
+				
+				default:
+					timezone = EAST;
 			}
 
 			return timezone;
