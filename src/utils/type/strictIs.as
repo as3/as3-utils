@@ -1,7 +1,5 @@
 package utils.type
 {
-	import flash.utils.*;
-	
 	/**
 	 * Checks the class of <code>instance</code> against the <code>compareClass</code> for strict
 	 * equality. If the classes are exactly the same, returns true. If

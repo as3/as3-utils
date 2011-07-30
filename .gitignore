@@ -9,4 +9,5 @@ bin-release
 .project
 .settings/
 .DS_Store
+launch
 org.eclipse.core.resources.prefs

@@ -1,6 +1,5 @@
 package  utils.type
 {
-	import flash.utils.*;
 	
 	/**
 	 * Checks to see if the class of <code>instance</code> is a primitive which will be copied by value

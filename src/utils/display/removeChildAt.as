@@ -2,7 +2,6 @@ package utils.display
 {
 	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
-	import flash.filters.DisplacementMapFilter;
 
 	/**
 	 * Removes the child at the index specified in a container and returns it.

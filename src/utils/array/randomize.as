@@ -19,7 +19,7 @@ package utils.array
 		var r:Array = inArray.sort(
 			function(a:*, b:*):int
 			{
-				return randomIntegerWithinRange(0, 1) ? 1 : -1
+				return randomIntegerWithinRange(0, 1) ? 1 : -1;
 			}
 			, Array.RETURNINDEXEDARRAY);
 		var i:int = -1;

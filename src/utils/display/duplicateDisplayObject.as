@@ -21,7 +21,7 @@ package utils.display {
 	 * @author cleaned up by Mims Wright
 	 */
 	public function duplicateDisplayObject(source:DisplayObject, autoAdd:Boolean = false):DisplayObject {
-		var sourceClass:Class = Object(source).constructor;
+		var sourceClass:Class = Class(source.constructor);
 		var duplicate:DisplayObject = new sourceClass() as DisplayObject;
 
 		// duplicate properties

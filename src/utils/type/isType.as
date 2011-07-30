@@ -1,5 +1,6 @@
 package utils.type
 {
+	import flash.utils.getQualifiedClassName;
 	/**
 	 * Evaluates whether an object or class is derived from a specific
 	 * data type, class or interface. The isType() method is comparable to

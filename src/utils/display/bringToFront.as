@@ -2,7 +2,7 @@ package utils.display
 {
 	import flash.display.DisplayObject;
 
-	import utils.number.clamp
+	import utils.number.clamp;
 
 	/**
 	 * Brings the DisplayObject to the front of the display list. The <code>back</code> parameter can be used to pull the DisplayObject back a few levels from the front.

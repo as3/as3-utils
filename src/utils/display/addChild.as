@@ -25,6 +25,6 @@ package utils.display
 			parent.addChildAt(child, atIndex);
 			return true;
 		}
-		return false
+		return false;
 	}
 }

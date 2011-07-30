@@ -14,7 +14,7 @@ package utils.type
 	 *
 	 * @see		flash.utils#describeType
 	 */
-	import flash.utils.describeType
+	import flash.utils.describeType;
 
 	public function describeType(value:Object, refreshCache:Boolean = false):XML
 	{

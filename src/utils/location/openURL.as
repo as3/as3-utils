@@ -28,7 +28,7 @@ package utils.location {
 		}
 
 		if(window == windowNames.WINDOW_BLANK && ExternalInterface.available && !isIDE() && request._data == null) {
-			if(openWindow(r.url, window)) return
+			if(openWindow(r.url, window)) return;
 		}
 
 		navigateToURL(r, window);

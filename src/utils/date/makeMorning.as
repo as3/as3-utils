@@ -5,7 +5,7 @@ package utils.date
 	 */
 	public function makeMorning(d:Date):Date
 	{
-		var d:Date = new Date(d.time);
+		d = new Date(d.time);
 		d.hours = 0;
 		d.minutes = 0;
 		d.seconds = 0;

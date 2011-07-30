@@ -1,9 +1,6 @@
 package utils.ratio {
 	import flash.geom.Rectangle;
 
-	import utils.math.Percent;
-
-
 
 	/**
 	 * Resizes an area to fill the bounding area while preserving aspect ratio.

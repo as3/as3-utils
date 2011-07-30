@@ -14,7 +14,7 @@ package utils.range {
 
         if(date1.getTime() == date2.getTime()){
 
-            throw new Error("Dates specified are the same")
+            throw new Error("Dates specified are the same");
 
         }
 
@@ -34,7 +34,7 @@ package utils.range {
         var time:Number = date1.getTime() + rand;
 
         var d:Date = new Date();
-        d.setTime(time)
+        d.setTime(time);
 
         return d;
 

@@ -1,9 +1,6 @@
 package utils.ratio {
 	import flash.geom.Rectangle;
 
-	import utils.math.Percent;
-
-
 
 	/**
 	 * Scales the height of an area while preserving aspect ratio.

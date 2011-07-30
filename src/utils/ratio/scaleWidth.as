@@ -1,10 +1,6 @@
 package utils.ratio {
 	import flash.geom.Rectangle;
 
-	import utils.math.Percent;
-
-
-
 	/**
 	 * Scales the width of an area while preserving aspect ratio.
 	 * @param rect Area's width and height expressed as a Rectangle - the Rectangle's x and y values are ignored

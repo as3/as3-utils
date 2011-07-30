@@ -15,12 +15,12 @@ import flash.geom.Point;
 
     public function polarToCartesianCoordinates(r:Number, q:Number) : Point {
 
-        var asRadian:Number = q * Math.PI/180
+        var asRadian:Number = q * Math.PI/180;
 
         var x:Number = r * Math.cos(asRadian);
         var y:Number = r * Math.sin(asRadian);
 
-        return new Point(x,y)
+        return new Point(x,y);
     }
 
 }
