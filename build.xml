@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <project
-		name="as3-utils"
-		basedir="."
-		default="package">
+	name="as3-utils"
+	basedir="."
+	default="package">
 
 	<!--
 		as3-utils
@@ -87,7 +87,9 @@
 			depends="initialize, compile-check-if-required"
 			unless="compile.not-required">
 
-		<compc output="${bin.loc}/${build.artifact}.swc">
+		<compc output="${bin.loc}/${build.artifact}.swc"
+		    target-player="10.0">
+		    
 			<source-path path-element="${src.loc}" />
 
 			<include-sources dir="${src.loc}">
@@ -100,7 +102,6 @@
 			</library-path>
 
 			<compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
-			<compiler.headless-server>true</compiler.headless-server>
 		</compc>
 
 	</target>
@@ -114,8 +115,9 @@
 
 		<!-- Compile Test -->
 		<mxmlc
-				file="${test.loc}/${test.runner}.${test.runner.ext}"
-				output="${bin.loc}/${test.runner}.swf">
+		    target-player="10.0"
+			file="${test.loc}/${test.runner}.${test.runner.ext}"
+			output="${bin.loc}/${test.runner}.swf">
 
 			<library-path dir="${bin.loc}" append="true">
 				<include name="${build.artifact}.swc" />
@@ -126,14 +128,12 @@
 			</library-path>
 
 			<compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
-			<compiler.headless-server>true</compiler.headless-server>
 		</mxmlc>
 
 		<!-- Execute Tests -->
 		<flexunit
 				swf="${bin.loc}/${test.runner}.swf"
 				toDir="${report.flexunit.loc}"
-				headless="true"
 				haltonfailure="false"
 				verbose="true"
 				localTrusted="true" />
