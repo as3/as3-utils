@@ -1,8 +1,6 @@
 package utils.align {
 	import flash.display.DisplayObject;
 
-
-
 	/**
 	 * Center align object to target.
 	 */

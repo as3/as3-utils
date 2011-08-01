@@ -5,8 +5,8 @@
  * Time: 3:07 PM
  */
 package utils.validation {
-public class encodeCreditCardNumberTest {
-    public function encodeCreditCardNumberTest() {
+public class EncodeCreditCardNumberTest {
+    public function EncodeCreditCardNumberTest() {
     }
 }
 }

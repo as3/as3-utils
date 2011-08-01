@@ -2,7 +2,7 @@ package utils.string
 {
 	import org.flexunit.asserts.*;
 
-	public class numberToStringTest
+	public class NumberToStringTest
 	{
 		[Before]
 		public function setup():void

@@ -3,7 +3,7 @@ package utils.object
 	import flexunit.framework.Assert;
 	import utils.object.contains;
 
-	public class containsTest
+	public class ContainsTest
 	{		
 		[Test]
 		public function testContains():void {

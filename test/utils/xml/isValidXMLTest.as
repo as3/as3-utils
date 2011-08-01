@@ -8,7 +8,7 @@ package utils.xml {
 import org.hamcrest.assertThat;
 import org.hamcrest.object.equalTo;
 
-public class isValidXMLTest {
+public class IsValidXMLTest {
 
     [Test]
     public function validXMLShouldReturnTrue() : void {

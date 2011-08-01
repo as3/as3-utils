@@ -12,7 +12,7 @@ package utils.date {
 	 *      </pre>
 	 * @param iso8601 Valid ISO 8601 formatted String
 	 * @return Date object of the specified date and time of the ISO 8601 String in universal time
-	 * @see <a href="http://www.w3.org/TR/NOTE-datetime">W3C ISO 8601 specification</a>
+	 * @see http://www.w3.org/TR/NOTE-datetime (W3C ISO 8601 specification)
 	 * @author Aaron Clinger
 	 * @author Shane McCartney
 	 * @author David Nelson

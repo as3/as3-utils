@@ -3,7 +3,7 @@ package utils.object
     import org.hamcrest.assertThat;
     import org.hamcrest.object.hasProperties;
 
-    public class cloneTest
+    public class CloneTest
     {
         [Test]
         public function clone_creates_object_with_equal_properties():void

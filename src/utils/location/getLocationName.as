@@ -1,9 +1,8 @@
 package utils.location {
+	
 	import flash.external.ExternalInterface;
 
 	import utils.capabilities.isStandAlone;
-
-
 
 	/**
 	 * Return current location name.
@@ -11,7 +10,7 @@ package utils.location {
 	 * @author Aaron Clinger
 	 * @author Shane McCartney
 	 * @author David Nelson
-	 * @author Vaclav Vancura (<a href="http://vancura.org">vancura.org</a>, <a href="http://twitter.com/vancura">@vancura</a>)
+	 * @author Vaclav Vancura (http://vancura.org, http://twitter.com/vancura)
 	 */
 	public function getLocationName():String {
 		var out:String;

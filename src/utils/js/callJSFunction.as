@@ -1,8 +1,6 @@
 package utils.js {
 	import flash.external.ExternalInterface;
 
-
-
 	/**
 	 * Call a JS function.
 	 * @param func Name of the function to be called
@@ -13,7 +11,7 @@ package utils.js {
 	 * @throws Error if empty function name supplied
 	 * @throws Error if SecurityError occurred
 	 * @throws Error if Error occurred
-	 * @author Vaclav Vancura (<a href="http://vancura.org">vancura.org</a>, <a href="http://twitter.com/vancura">@vancura</a>)
+	 * @author Vaclav Vancura (http://vancura.org, http://twitter.com/vancura)
 	 */
 	public function callJSFunction(func:String, arg1:* = null, arg2:* = null, arg3:* = null, arg4:* = null):void {
 		if(func == "") {

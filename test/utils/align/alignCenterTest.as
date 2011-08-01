@@ -1,15 +1,12 @@
 package utils.align
 {
     import flash.display.Sprite;
-
-    import mx.core.UIComponent;
-
+    
     import org.fluint.uiImpersonation.UIImpersonator;
     import org.hamcrest.assertThat;
-
     import org.hamcrest.object.equalTo;
 
-    public class alignCenterTest
+    public class AlignCenterTest
     {
 
         [Test]
@@ -51,11 +48,10 @@ package utils.align
 
         private function addItemAndTargetToStage(item:Sprite, target:Sprite):void
         {
-            var uiComponent:UIComponent = new UIComponent();
-
-            UIImpersonator.addChild(uiComponent);
-            uiComponent.addChild(item);
-            uiComponent.addChild(target);
+			var container:Sprite = new Sprite();
+			container.addChild(item);
+			container.addChild(target);
+			UIImpersonator.addChild(container);
         }
     }
 }

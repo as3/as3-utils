@@ -11,7 +11,7 @@ import org.hamcrest.object.equalTo;
 
 import utils.validation.isValidPhoneNumber;
 
-public class isValidPhoneNumberTest {
+public class IsValidPhoneNumberTest {
 
     [Test]
     public function validNumberPasses() : void {

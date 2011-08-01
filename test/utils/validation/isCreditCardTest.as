@@ -5,8 +5,8 @@
  * Time: 11:44 AM
  */
 package utils.validation {
-public class isCreditCardTest {
-    public function isCreditCardTest() {
+public class IsCreditCardTest {
+    public function IsCreditCardTest() {
     }
 }
 }

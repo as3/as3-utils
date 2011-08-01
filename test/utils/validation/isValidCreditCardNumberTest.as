@@ -10,7 +10,7 @@ import org.hamcrest.object.equalTo;
 
 import utils.validation.isValidCreditCardNumber;
 
-public class isValidCreditCardNumberTest {
+public class IsValidCreditCardNumberTest {
 
     [Test]
     public function ccBelowMinimum13ShouldFail() : void {

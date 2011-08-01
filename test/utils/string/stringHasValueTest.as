@@ -4,7 +4,7 @@ package utils.string
     import org.hamcrest.object.isFalse;
     import org.hamcrest.object.isTrue;
 
-    public class stringHasValueTest
+    public class StringHasValueTest
     {
         [Test]
         public function stringHasValue_is_true_for_a_string_with_a_value():void

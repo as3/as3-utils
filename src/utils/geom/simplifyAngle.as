@@ -1,7 +1,5 @@
 package utils.geom {
 
-
-
 	/**
 	 * Simplifies the supplied angle to its simplest representation.
 	 * Example code:
@@ -11,7 +9,7 @@ package utils.geom {
 	 *      </pre>
 	 * @param angle Angle to simplify in degrees
 	 * @return Supplied angle simplified
-	 * @author Vaclav Vancura (<a href="http://vancura.org">vancura.org</a>, <a href="http://twitter.com/vancura">@vancura</a>)
+	 * @author Vaclav Vancura (http://vancura.org, http://twitter.com/vancura)
 	 */
 	public function simplifyAngle(angle:Number):Number {
 		var _rotations:Number = Math.floor(angle / 360);

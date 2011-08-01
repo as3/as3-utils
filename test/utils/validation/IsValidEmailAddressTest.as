@@ -8,35 +8,35 @@ package utils.validation {
 import org.hamcrest.assertThat;
 import org.hamcrest.object.equalTo;
 
-import utils.validation.isValidEmailAddress;
+import utils.validation.IsValidEmailAddressTest;
 
-public class isValidEmailAddress {
+public class IsValidEmailAddressTest {
 
     [Test]
     public function goodEmailPasses() : void {
 
-        assertThat(utils.validation.isValidEmailAddress("test@test.com"), equalTo(true))
+        assertThat(isValidEmailAddress("test@test.com"), equalTo(true))
 
     }
 
     [Test]
     public function emailWithSpaceFails() : void {
 
-        assertThat(utils.validation.isValidEmailAddress("test@ test.com"), equalTo(false))
+        assertThat(isValidEmailAddress("test@ test.com"), equalTo(false))
 
     }
 
     [Test]
     public function emailWithoutAtSymbolFails() : void {
 
-        assertThat(utils.validation.isValidEmailAddress("testtest.com"), equalTo(false))
+        assertThat(isValidEmailAddress("testtest.com"), equalTo(false))
 
     }
 
     [Test]
     public function emailWithInvalidCharacterFails() : void {
 
-        assertThat(utils.validation.isValidEmailAddress("test@te$t.com"), equalTo(false))
+        assertThat(isValidEmailAddress("test@te$t.com"), equalTo(false))
 
     }
 }

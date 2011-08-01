@@ -11,7 +11,7 @@ import org.hamcrest.object.equalTo;
 
 import utils.validation.isValidExpirationDate;
 
-public class isValidExpirationDateTest {
+public class IsValidExpirationDateTest {
 
     [Test]
     public function expirationOfNextYearShouldPass() : void {

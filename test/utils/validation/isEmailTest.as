@@ -5,8 +5,8 @@
  * Time: 11:39 AM
  */
 package utils.validation {
-public class isEmailTest {
-    public function isEmailTest() {
+public class IsEmailTest {
+    public function IsEmailTest() {
     }
 }
 }

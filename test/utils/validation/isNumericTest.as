@@ -5,8 +5,8 @@
  * Time: 11:37 AM
  */
 package utils.validation {
-public class isNumericTest {
-    public function isNumericTest() {
+public class IsNumericTest {
+    public function IsNumericTest() {
     }
 }
 }

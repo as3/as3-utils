@@ -5,8 +5,8 @@
  * Time: 11:48 AM
  */
 package utils.validation {
-public class isBlankTest {
-    public function isBlankTest() {
+public class IsBlankTest {
+    public function IsBlankTest() {
     }
 }
 }

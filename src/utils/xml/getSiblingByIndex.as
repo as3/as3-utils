@@ -12,19 +12,18 @@ package utils.xml
 	 * @playerversion Flash 9.0
      *
      * @example Getting a sibling 2 positions behind a node
-     * <listing version="3.0" >
-     * var x:XML =
-     *               <root>
+     * <listing version="3.0">
+     * 	var x:XML = <root>
      *                  <stuff>value1</stuff>
      *                  <stuff>value2</stuff>
      *                  <stuff>value3</stuff>
      *              </root>;
      *
-     * //Request sibling 2 positions before "value3"
-     * var sibling:XML = getSiblingByIndex(x.stuff[2], -2);
+     * 	//Request sibling 2 positions before "value3"
+     * 	var sibling:XML = getSiblingByIndex(x.stuff[2], -2);
      *
-     * //returns "value1"
-     *</listing>
+     * 	//returns "value1"
+     * </listing>
 	 */
 	public function getSiblingByIndex(x:XML, count:int):XML
 	{
