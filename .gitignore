@@ -1,4 +1,7 @@
+src/FlexUnitApplication.mxml
+src/FlexUnitCompilerApplication.mxml
 target
+bin/FlexUnitApplication.swf
 bin-debug
 bin-release
 *.iml
