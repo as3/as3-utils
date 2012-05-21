@@ -36,6 +36,7 @@ package utils.mvc
 		public function set model(model:*):void { _model = model; }
 		protected var _model:*;
 		
+		
 		/** 
 		 * The controller for the model that the view will use to modify it.
 		 * If it is set to null, the default controller will be used.
