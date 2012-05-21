@@ -5,8 +5,9 @@ package utils.string
 	 */
 	public function htmlEncode(s:String):String
 	{
-		s = replace(s, " ", "&nbsp;");
 		s = replace(s, "&", "&amp;");
+		
+		s = replace(s, " ", "&nbsp;");
 		s = replace(s, "<", "&lt;");
 		s = replace(s, ">", "&gt;");
 		s = replace(s, "™", '&trade;');
