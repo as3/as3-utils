@@ -10,24 +10,24 @@ package utils.display
 	 * @param child The child DisplayObject to remove.
 	 * @param parent The parent to remove the child from. If none is specified, the function
 	 * 				 attempts to get the parent from the child's <code>parent</code> property.
-	 * @returns Boolean True if the child was removed from the parent. False if something prevented it.
+	 * @return DisplayObject The child that was removed.
 	 * 
 	 * @author Mims Wright
 	 */
-	public function removeChild(child:DisplayObject, parent:DisplayObjectContainer = null):Boolean
+	public function removeChild(child:DisplayObject, parent:DisplayObjectContainer = null):DisplayObject
 	{
 		if (child) {
 			if (!parent) {
 				if (!child.parent) { // if parent and child.parent are null
-					return false;
+					return null;
 				}
 				parent = child.parent;
 			}
 			if (parent == child.parent) {
 				parent.removeChild(child);
-				return true;
+				return child;
 			}
 		}
-		return false;
+		return null;
 	}
 }
