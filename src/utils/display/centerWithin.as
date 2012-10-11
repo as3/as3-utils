@@ -21,7 +21,7 @@ package utils.display
 				return;
 			}
 		}
-		objectToPosition.x = (withinObject.width - objectToPosition.width)/2;
-		objectToPosition.y = (withinObject.height - objectToPosition.height)/2;
+		objectToPosition.x = withinObject.x + (withinObject.width - objectToPosition.width)/2;
+		objectToPosition.y = withinObject.y + (withinObject.height - objectToPosition.height)/2;
 	}
 }
