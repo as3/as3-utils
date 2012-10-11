@@ -20,6 +20,7 @@ package utils.display
 	 * 	@param container Container to remove from
 	 *  @param the type of children to remove
 	 *  @author John Lindquist
+	 *  @author Mims Wright - Rewrote 2012-10-11
 	 */
 	public function removeAllChildrenByType(container:DisplayObjectContainer, type:Class):void
 	{
