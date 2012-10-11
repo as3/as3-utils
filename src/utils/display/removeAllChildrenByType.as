@@ -23,12 +23,20 @@ package utils.display
 	 */
 	public function removeAllChildrenByType(container:DisplayObjectContainer, type:Class):void
 	{
-		for each(var child:DisplayObject in container)
-		{
-			if(child is type)
-			{
-				container.removeChild(child);
+		var i:int = 0
+		  , l:int = container.numChildren
+		  , childrenToRemove:Array = []
+		  , child:DisplayObject;
+		
+		for (;i<l;i+=1)	{
+			child = container.getChildAt(i);
+			if(child is type) {
+				childrenToRemove.push(child);
 			}
+		}
+		
+		for each (child in childrenToRemove) {
+			container.removeChild(child);
 		}
 	}
 }
