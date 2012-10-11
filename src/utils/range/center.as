@@ -1,5 +1,6 @@
 package utils.range
 {
+	// TODO: what is the purpose of this function? Needs documentation.
 	public function center(a:Number, b:Number, c:Number):Number
 	{
 		if ((a > b) && (a > c))
