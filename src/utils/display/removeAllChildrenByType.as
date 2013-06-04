@@ -20,15 +20,24 @@ package utils.display
 	 * 	@param container Container to remove from
 	 *  @param the type of children to remove
 	 *  @author John Lindquist
+	 *  @author Mims Wright - Rewrote 2012-10-11
 	 */
 	public function removeAllChildrenByType(container:DisplayObjectContainer, type:Class):void
 	{
-		for each(var child:DisplayObject in container)
-		{
-			if(child is type)
-			{
-				container.removeChild(child);
+		var i:int = 0
+		  , l:int = container.numChildren
+		  , childrenToRemove:Array = []
+		  , child:DisplayObject;
+		
+		for (;i<l;i+=1)	{
+			child = container.getChildAt(i);
+			if(child is type) {
+				childrenToRemove.push(child);
 			}
+		}
+		
+		for each (child in childrenToRemove) {
+			container.removeChild(child);
 		}
 	}
 }
