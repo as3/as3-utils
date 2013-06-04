@@ -46,3 +46,7 @@ Fork the [as3-utils project](http://github.com/as3/as3-utils) on GitHub, see the
 
 Many of these utils are copy/pasted from open-source projects from around the web. We will attribute functions to their creators (it's on our list of things to do) and we hope function authors understand that we're not trying to take credit for their work. We don't want credit, we just want a collection of great open-source utils supported by the community.
 If you include your own code in the library, please be sure to add a credit for yourself in the comments or use an @author tag in the asDocs. 
+
+# License
+
+Since many of the functions in the library are pulled or adapted from other sources, there is no single license that covers everything. However, the intent is for this code to be freely available and editable, a la the MIT license, except where otherwise noted. We've done our best to include appropriate attribution and license where required but if you see something that should not be in here, please let us know and we will remove it.
